@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <script>
-var result = confirm("정말로 회원을 탈퇴하시겠습니까?");
+var price1 = 3000;
+var price2 = 6000;
+var price3 = 3000;
+var total = price1 + price2 + price3; //전체합계
+var result = total > 10000 ? total - 10000 + "원 초과" :"돈관리잘했어요";
 
-//document.write(result);
-
-if(result) {
-    document.write("탈퇴 처리되었습니다!");
-} else {
-    document.write("탈퇴 취소되었습니다!");
-}
+document.write(result);
 
 
 </script>
+
 
 </head>
 <body>
