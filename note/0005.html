@@ -1,0 +1,95 @@
+
+
+
+z-index: 1;
+<!-- 우선순위 부여 -->
+<!-- () -->
+
+
+
+position: absolute;
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+<!-- 박스 중앙정렬 -->
+
+transform: translateX(-50%)
+<!-- 좌우(가로) 중앙정렬 -->
+
+transform: translateY(-50%)
+<!-- 상하(세로) 중앙정렬 -->
+
+
+
+transform:rotate(50deg)
+<!-- 우측으로 50도 기울이기 -->
+transform:rotate(50deg)
+<!-- 좌측으로 50도 기울이기 -->
+
+
+transform:rotete(20deg)
+transfomt-origin: right top
+<!-- 회전의 중심이 우측 상단 기준으로 변경(기본값 : center) -->
+
+
+index-standard.html <<
+
+
+
+*** 0927/you/index100
+- float는 position에 영향X
+- 헤더만 전체너비로 고치려면 header_out 전체너비주고 header 감싸기
+-  header밖으로 나간 gnb , lnb, nav bar :  float로 재정렬 (float는 position과 무관.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+display: flex;
+
+    flex-wrap: nowarp  
+    <!--넘쳐도 한줄로 표시(생략가능한 기본값)  -->
+    flex-wrap: wrap  
+    <!-- 넘치면 줄바꿈 -->
+    flex-wrap: wrap-reverse 
+    <!-- 540p 참고 -->
+
+ 
+
+    justify-content: space-evenly;  
+    <!-- 여백빼고줄것,  균등분배-->
+
+    justify-content: space-evenly; /*중앙을 기준으로 배치 참고 544p*/
+    /* justify-contetn: center / space-around / space-between /flex-start/flex-end */
+
+
+
+
+    align-items: center; /*위아래 중앙정렬*/
+
+
+
+    flex-start : 기본값으로 justify-content가 지정 되지 않은 경우 이것이 기본정렬
+flex-end : flext 컨테이너의 끝에 요소를 정렬한다. 행의 경우 오른쪽 끝, 열의 경우 하단 끝 
+space-between : 요소사이에 추가 공간을 두고 첫 번째 요소와 마지막 요소는 가장 자리로 밀려난다.
+            예를 들어 첫번째 항목은 컨테이너의 왼쪽에, 마지막 항목은 컨테이너의 오른쪽에 나머지 공간은 다른 요소에 균등하게 배분
+space-around : space-between와 비슷하지만 첫번째 요소와 마지막 요소가 컨테이너의 가장자리에 고정되어 있지 않다.
+             공간은 flex 컨테이너의 양쪽 끝에 절반의 공간을 두고 모든 항목 주위에 분산 된다.
+space-evenly : flex 컨테이너의 양쪽 끝에 전체 공간을 두고 flex 요소 사이에 공간을 균등하게 분배
+
+
+
+<!-- em / rem -->
+ <!-- em: 부모 기준 / rem: root기준(body) -->

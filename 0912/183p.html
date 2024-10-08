@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .container{
+            border: 1px solid #333;
+            width: 600px;
+            margin: 0 auto;
+            padding-left : 40px;
+            padding-right : 40px;
+            padding-bottom : 40px;
+            background-color: beige;
+        }
+        h1{color: darkolivegreen;}
+
+        ul{list-style: none;}
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <form action="">
+    <div class="container">
+
+        <h1>프런트엔드 개발자 지원서</h1>
+        <p><strong>Html, CSS, Jacascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</strong></p>
+
+        <hr>
+
+    
+            <div class="personal">
+                <h4>개인정보</h4>
+                <ul>
+                    <li>
+                    <label>이름&nbsp;&nbsp;&nbsp;
+                    <input id="name" type="text" placeholder="공백없이 입력하세요" required>
+                    </label>
+                    </li>
+
+                    <li>
+                    <label>연락처
+                    <input type="tel" placeholder="공백없이 입력하세요" required>
+                    </label>
+                    </li>
+
+                    <!--input을 label 안에 있을 땐, lable for="abc" input id="abc" 필요하지 않음-->
+
+                </ul>
+
+            </div>
+               
+                <div class="field">
+                <h4>지원 분야</h4>
+                <ul> 
+                        
+                    <li><label><input type="radio" name="field">웹 퍼블리싱</label></li>
+
+                    <li><label><input type="radio" name="field">웹 애플리케이션 개발</label></li>
+
+                    <li><label><input type="radio" name="field">개발 환경 개선</label></li>
+
+                    <!-- type="radio" : 단일선택 옵션, 항목은 같은 name="abc"로 묶어준다. name값이 같은 것들끼리 그룹핑 -->
+                    <!-- type="checkbox" : 다중선택 옵션, 항목은 같은 name="abc"로 묶어준다. name값이 같은 것들끼리 그룹핑 -->
+                    
+                </ul>
+
+                </div>
+                
+
+                <div class="detail">
+                <h4>지원 동기</h4>
+                <label for="comment"></label>
+                <textarea id="comment" cols="60" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="접수하기">
+                    <input type="reset" value="다시쓰기">
+
+                    <!-- input type ="submit" / '제출'버튼 , 이름 변경할땐 value에 값 적어주기!-->
+                    <!-- input type ="button" / 아직 안배움-->
+                    <!-- input type ="reset"/ 초기화-->
+                </div>
+
+               
+
+
+           
+  
+       
+
+
+
+
+
+
+
+    </div>
+    </form>
+</body>
+
+</html>

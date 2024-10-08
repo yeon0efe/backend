@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        *{padding:0; margin:0;}
+        body{font-family: "Noto Sans KR", sans-serif;}
+        ul li{list-style: none;}
+        a{color:white; text-decoration: none;}
+        
+
+
+
+        header{
+            width: 100%;
+            height: 800px;
+            background: url(./image/visualimg_4_1920.png) 45% 50% no-repeat;
+            background-size: cover;
+            position: relative;
+            
+    
+        }
+
+        .logo{
+               
+                width: 210px;
+                height: 70px;
+                position: absolute;
+                left:0;
+                top:0;
+                z-index: 10;
+                
+                background: url(./image/top_logo.png) 60% 50% no-repeat;
+                background-size: cover;
+                
+            }
+            /* ---------------------------- */
+        .gnb{
+                width: 900px;
+                height: 70px;
+                border-bottom:1px solid white;
+                box-sizing: border-box;
+                position: absolute;
+                top:0;
+                left:50%;
+                transform: translateX(-50%);
+                z-index: 20;
+            }
+
+        .gnb>li{
+            float:left;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            padding:0 10px;   
+        }
+        .gnb>li>a{
+            font-size: 19px;
+            font-weight: 300;
+        }
+
+        .gnb li a{
+        
+           display: block;
+           width: 156px;
+        }
+
+        .gnb li ul{
+           height: 0px;
+           overflow: hidden;
+           margin-top: 10px;
+           /* border-bottom 가려져서 margin-top 조금 줌.. */
+           
+           /* 메인메뉴와 서브메뉴 사이 간격 */
+           transition: all 0.2s;
+           
+        }
+        .gnb li ul li{
+            height: 40px;
+            /* 서브메뉴들 높이 */
+            
+        }
+        .gnb li ul li a{
+            font-size: 15px;
+            font-weight: 200;
+        }
+
+        .gnb:hover ul{
+            height: 230px;
+            background-color: rgb(18,45,107);
+            
+        }
+        .gnb:hover + .shadow{
+            height: 340px;
+            /* shadow 높이: 70(gnb)+10(margin-top)+230(gnb:hover ul) + 30*/
+        }
+            /* ---------------------------- */
+            
+        .top-bar{
+                width: 210px;
+                height: 70px;
+                position: absolute;
+                right:0;
+                top:0;
+                background-color: rgb(242,242,242);
+                
+                z-index: 10;
+                /* shadow z-index:5 */
+
+                line-height: 70px;
+            }
+        .top-bar .login{float:left;} 
+        .top-bar .join{float:left; }
+
+        .top-bar a{
+            display: block;
+            color:#777;
+            margin-left: 20px;
+        }
+            /* ---------------------------- */
+
+            
+            .shadow{
+                width: 100%;
+                height: 0;
+                /* height: 400px; */
+                background-color: rgb(18,45,107);
+
+                z-index: 5;
+                position: absolute;
+                /* z-index 사용위해 position 부여함 */
+
+                transition: all 0.2s;
+            }
+/* -------------------------------- */
+        .txt{
+            position: absolute;
+            left:100px;
+            top:250px;
+
+            z-index:1;
+            /* shadow z-index :5 */
+        }
+/* -------------------------------- */
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <div class="logo"></div>
+        
+        <div class="top-bar">
+            <!-- ----- -->
+            <div class="login">
+                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+            </div>
+
+            <div class="join">
+                <a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Join</a>
+            </div>
+            <!-- ----- -->
+        </div>
+
+        <div class="txt"><img src="./image/visualtxt.png" alt=""></div>        
+        
+        <nav>
+            <ul class="gnb">
+                <li><a href="#">분양안내</a>
+                    <ul>
+                        <li><a href="#">분양캘린더</a></li>
+                        <li><a href="#">분양정보</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">현장안내</a>
+                    <ul>
+                        <li><a href="#">공사단지 정보</a></li>
+                        <li><a href="#">입주단지 정보</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">입주안내</a>
+                    <ul>
+                        <li><a href="#">입주가이드</a></li>
+                        <li><a href="#">중도금납부조회</a></li>
+                        <li><a href="#">입주예약</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">고객서비스</a>
+                    <ul>
+                        <li><a href="#">A/S센터</a></li>
+                        <li><a href="#">고객문의</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">브랜드</a>
+                    <ul>
+                        <li><a href="#">센트레빌</a></li>
+                        <li><a href="#">센트레빌 아스테리움</a></li>
+                        <li><a href="#">단지갤러리</a></li>
+                        <li><a href="#">수상실적</a></li>
+                        <li><a href="#">센트레빌 소식</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="shadow"></div>	
+        </nav>
+        <!-- <p class="log"><img src="./image/top_logo.png" alt="logo"></p> -->
+    </header>
+</body>
+</html>

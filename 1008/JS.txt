@@ -1,0 +1,14 @@
+
+console.log() // 콘솔창에 결과값 출력
+
+document.write()
+
+prompt("문구","0(기본값)")
+
+
+조건문
+
+
+        let age = prompt("나이를 입력하세요?","0")
+        let message = age >= 18 ?"성인입니다.":"미성년자입니다."
+

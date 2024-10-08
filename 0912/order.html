@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        .container{
+
+            width: 600px;
+            margin-left:auto;
+            margin-right:auto;
+            /* 축약하면 아래와 같이 쓸 수 있다.*/
+            /* margin: 0 auto; */
+            /* 바깥여백 위아래는 0을 주고 좌우는 auto를 준다. */
+        }
+
+        /* ul{순서없는 목록} */
+        ul{
+            list-style: none; /*순서는 원래 없고, 불릿 삭제*/
+        }
+
+        label.title{
+            font-weight: bold;
+            float:left ; /*왼쪽부터 배치*/
+            width: 80px /*너비 80*/
+        }
+        /* label이면서 title의 이름을 가진 것 호출  label.title 띄어쓰기하면 절대 안됨-! 차라리 .title만 적기 */
+
+        fieldset{
+            margin: 15px 10px; /*상하 마진 15 좌우 마진 10*/
+        }
+
+        fieldset legend {
+
+            /* 필드셋의 제목에 해당하는 부분 */
+            font-weight: bold;
+            font: size 18px;
+            color: orangered;
+        }
+
+        ul li{
+            margin-bottom: 10px;
+            /* 아래마진 10을 주겠다. */
+        }
+
+
+        /* input img 등은 인라인 블록요소  */
+
+        div.centered{
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>상품 주문서</h1>
+    <form action="">
+        <fieldset>
+
+            <legend>개인 정보</legend>
+
+            <ul>
+
+                <li>
+                    <label for="uname" class="title">이름</label>
+                    <input type="text" id="uname" placeholder="여백없이 입력" required>
+                    <!-- required 필수입력사항 -->
+                    <!-- placeholder 텍스트 표시 -->
+                </li>
+
+                <li>
+                    <label for="tel1" class="title">연락처</label>
+                    <input type="tel" id="tel1" placeholder="연락가능한 번호" >
+                </li>
+               
+                
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>배송지 정보</legend>
+
+
+            <ul>
+                <li> 
+                    <label for="addr" class="title">주소</label>
+                    <input type="text" id="addr" size="40" required>
+                </li>
+
+                <li> 
+                    <label for="tel2" class="title">전화번호</label>
+                    <input type="tel" id="tel2" required>
+                </li>
+
+                <li> 
+                    <label for="comment" class="title">메 모</label>
+                    <textarea id="comment" clos="40" rows=3></textarea>
+
+                </li>
+
+            </ul>
+
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>주문 정보</legend>
+            <ul>
+
+                <li>
+                    <label><input type="checkbox"> 과테말라 안티구아(100g)</label>
+                    <label><input type="number" value="0" min="0" max="5"> 개</label>
+                </li>
+
+                <li>
+                    <label><input type="checkbox"> 인도네시아 만델링(100g)</label>
+                    <label><input type="number" value="0" min="0" max="5"> 개</label>
+                </li>
+
+                <li>
+                    <label><input type="checkbox"> 탐라는도다(블렌딩)(100g)</label>
+                    <label><input type="number" value="0" min="0" max="5"> 개</label>
+                </li>
+
+            </ul>
+
+
+        </fieldset>
+
+        <fieldset>
+        <div class="centered">
+
+            <input type="submit" value="주문하기">
+            <input type="reset" value="다시작성">
+        </div>
+        </fieldset>
+
+    </form>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>

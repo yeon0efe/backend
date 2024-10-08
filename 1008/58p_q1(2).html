@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // var price1 =prompt("price1입력")
+        // var price2 =prompt("price2입력")
+        // var price3 =prompt("price3입력")
+
+       // 변수를 문자값으로 인식하는 문제 발생.
+       // prompt : 문자를 입력받는 기능
+
+       var price1 =Number(prompt("price1입력"))
+       var price2 =Number(prompt("price2입력"))
+       var price3 =parseInt(prompt("price3입력"))
+       // prompt를 Number(),perseInt로 감싸 변수값을 숫자로 인식하게끔 변경
+
+
+       //parseInt : =정수값만 도출(소숫점x)
+
+    
+    
+        var result = price1 + price2 + price3;
+
+        var over = result-10000;
+
+        result = result>10000 ? over+"원 초과" : "돈 관리 잘했어요!"
+
+        document.write(result)
+        
+
+
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

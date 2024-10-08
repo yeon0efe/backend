@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+
+
+*{margin:0px; padding:0px;}
+
+.container{
+    border: 1px solid black;
+    width: 820px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+    
+.container header{
+    background-image: url(image/top.jpg);
+    height: 270px;
+    position: relative;
+}
+.logo{
+    position:absolute;
+    color:white;
+    left:80%;
+    top:70%;
+}
+
+.container nav{
+    background-color: rgb(40,30,13);
+    height: 60px;
+}
+nav ul li{
+    display:inline-block;
+   
+}
+nav ul li a{
+    /* ???????? */
+    display: block;
+    color:white;
+    text-decoration: none;
+    border: 1px solid white;
+    margin-left:23px; 
+    width: 110px; 
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+    /* ???? */
+    margin-top: 10px;
+}
+
+nav ul li a:hover{
+    background-color: white;
+    color : black;
+    text-decoration: underline;
+}
+
+.content{
+
+}
+
+section{
+    float:left;
+    width: 550px;
+    height: 500px;
+    background-color: rgb(201,201,201);
+    
+}
+
+section h3{
+    height: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+section h4{
+
+    background-image: url(image/kong.png);
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+section article{
+    border: 1px solid black;
+    float: left;
+    width: 220px;
+    height: 180px;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding:10px;
+    transition: 0.5s;
+}
+section article:hover{
+    background-color: #d3e6c2;
+}
+aside{
+    float:left;
+    width: 270px;
+    height: 500px;
+    background-color: rgb(111,97,86);
+    text-align: center;
+}
+
+aside img {
+    padding-top:10px;
+}
+aside h3{
+    margin-top: 15px;
+    text-align: center;
+}
+
+footer{
+    clear: both; 
+    height: 30px;
+    padding-top: 10px;
+    background-color: rgb(40,30,13);
+    text-align: center;
+    color:white;
+}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">Joandora</h1>
+        </header>    
+        <nav>
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">제품소개</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">다운로드</a></li>
+                <li><a href="#">고객지원</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section>
+                <h3>커피의 종류</h3>
+                <article>
+                <h4>에스프레소</h4>
+                <p>
+                에스프레소는 커피 원액입니다. 잘 갈린 커피 원두를 고온, 고압으로 추출해 먹는것을 에스프레소라고 합니다 모든 커피에 기본이 됩니다.
+                </p>
+                </article>
+                <article>
+                <h4>아메리카노</h4>
+                <p>
+                아메리카노는 에스프레소와 물을 섞어 에스프레소의 진한 맛을 순화시킨 것인데요 아메리카노의 유래가 미국에서 시작 되어 아메리카노라고 불리운다고 합니다.
+                </p>
+                </article>
+                <article>
+                <h4>카페라떼</h4>
+                <p>
+                카페라떼는 에스프레소와 스팀우유, 우유거품이 들어가 있는 커피입니다. 에스프레소 1샷을 추출하고 그위에 스팀우유를 붓고 우유거품을 그위에 올리게 되면 카페라떼가 완성됩니다
+                </p>
+                </article>
+                <article>
+                <h4>카프치노</h4>
+                <p>
+                카푸치노는 카페라떼와 들어가는 재료는 똑같습니다. 하지만 제조방법이 다르죠 카페라떼보다 스팀우유의 양이 덜들어가고 우유거품의 양이 더 많이 들어가 부드럽고 진한 맛을 느낄수 있습니다.
+                </p>
+                </article>
+            </section>
+            <aside>
+                <h3>커피사진</h3>
+                <img src="image//c1.jpg" alt="커피1" width="200">
+                <img src="image/c2.jpg" alt="커피2" width="200">
+                <img src="image/c3.jpg" alt="커피3" width="200">
+            </aside>
+        </div>    
+        <footer>Copy right Joandora reseved.</footer>
+    </div>
+</body>
+</html>

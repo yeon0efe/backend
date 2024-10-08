@@ -1,0 +1,54 @@
+*{margin: 0; padding:0;}
+ul{list-style: none;}
+#container{
+    width: 800px;
+}
+#header{
+    height: 70px;
+    
+}
+
+.one>li{
+    float:left;
+}
+/* 
+> : 자식선택자
+스페이스바 : 자손선택자
+ */
+ .one li{
+    background-color: dodgerblue;
+ }
+
+ .one li a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+
+ }
+ .one li ul{
+    display: none;
+    position: absolute;
+    /* 겹치는 속성 */
+    /* 이동속성은 left top 주지 않았으므로 원래의 위치에 있다. */
+ }
+
+ .one li:hover ul{
+    display: block;
+   
+    
+ }
+/* 
+ .one li:hover a{
+    background-color: bisque;
+    
+ }  */
+
+
+ .one li a:hover{
+    background-color: bisque;
+    
+ } 
