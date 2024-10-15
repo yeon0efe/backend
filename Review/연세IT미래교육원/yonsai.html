@@ -193,7 +193,7 @@ header{
             </div>
             <div class="header_middle">
                 <img src="./image/logo_center.png" alt="연세IT미래교육원"  class="yonsai">
-                <a href="https://accounts.elice.io/accounts/signin/me?continue_to=https%3A%2F%2Fysedu.elice.io%2F&lang=ko&org=ysedu"><img src="./image/logo_right.gif" alt="온라인강의실" class="banner"></a>
+                <a href="#"><img src="./image/logo_right.gif" alt="온라인강의실" class="banner"></a>
             </div>  
 
             <div class="nav"></div>
@@ -269,8 +269,13 @@ header{
 
         <div class="main">
             <div class="slide1">
-                <img src="./image/yojo.png" alt="">
+                <img src="./image/main1.png" id="mainImage" alt="">
+                <p class="buttons">
+                    <button onclick="gallery(0)">&nbsp;&nbsp;이전&nbsp;&nbsp;</button>
+                    <button onclick="gallery(1)">&nbsp;&nbsp;다음&nbsp;&nbsp;</button>
+                </p>    
             </div>
+         
             <div class="gifbox"></div>
             <div class="slide1"></div>
         </div>
@@ -279,6 +284,24 @@ header{
 
 
 
+        <script>
+        var num=1;
+        function gallery(direct){
+            if(direct){
+                if(num==8) return;
+                num++;
+            }else{
+                if(num==0) return;
+                num--;
+            }
+            
+            var imgTag = document.getElementById('mainImage')
+            imgTag.setAttribute('src',"image/main"+num+".png")
+        }
+
+
+
+        </script>
 
 
     

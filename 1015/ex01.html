@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*
+        var a =10;  // 변수 선언
+        a = 20; // 변수값 재할당
+        document.write(a); // 화면에 출력
+        console.log(a); // 콘솔창에 출력
+        alert(a); // 경고창으로 출력
+        */
+
+
+        /* 
+        var userName=prompt("이름을 입력하세요.", "이름");
+        document.write("안녕하세요, "+userName+"님");
+        document.write(`안녕하세요, ${userName}님`);
+        */
+
+        /* 
+        var numbers = [1,2,3,4,5];
+        document.write(numbers,"<br>")
+        document.write(numbers[0],"<br>")
+        document.write(numbers[1],"<br>")
+        document.write(numbers[2],"<br>")
+        document.write(numbers[3],"<br>")
+        document.write(numbers[4],"<br>")
+        */
+
+        /*
+        for(var i=0; i<numbers.length; i++){
+            document.write(numbers[i],"<br>");
+        }
+        */
+
+        /*
+        // 객체 생성하기
+        let person ={
+            name:"홍길동",
+            age:30
+        }
+        document.write(person.name,"<br>");
+        document.write(person.age,"<br>");
+        
+        let personJson =JSON.stringify(person);
+        // json 형식의 파일로 객체리터럴을 변환
+        console.log(personJson)    
+        */
+
+        
+       /* 
+        add(); //여기서도 함수 호출 가능
+        function add(){ // function 이름(){} : 호스팅됨
+            document.write("안녕하세요.")
+        }
+        var result = add();
+        */
+
+       /*
+        add(); //함수호출 : 오류 발생 
+       var add = function() {
+           document.write("안녕하세요.")
+        }
+        add(); //함수호출
+
+        // 이렇게 생긴 함수는 함수 선언을 먼저하고, 함수호출을 나중에 한다.
+        */
+
+        // 일반함수는 함수선언을 어느 위치에 작성하더라도 호출 가능
+        // 그러나 익명 함수 선언 참조 방식은 호스팅을 지원하지 않는다.
+        // 호스팅을 적용하면 함수 정의문보다 호출문이 먼저 나와도 
+        // 함수 정의문을 끌어올려 함수를 호출한다.
+
+        /*
+        var add = () => {
+           document.write("안녕하세요.")
+        }
+        add(); 
+        // 익명 함수 이렇게 변환하여 사용 가능
+        */
+
+        function add(num1, num2){ 
+            return num1 + num2 ;
+        }
+        
+        let result1 = add(3,5);
+        let result2 = add(8,9);
+        document.write(result1,"<br>");
+        document.write(result2,"<br>");
+
+        
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

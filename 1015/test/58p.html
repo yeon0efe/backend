@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var price1=prompt("1일차 지출");
+        var price2=prompt("2일차 지출");
+        var price3=prompt("3일차 지출");
+      
+        var total=price1+price2+price3;
+        var add=total-10000;
+        
+        if(total>10000){
+            document.write(Number(total-10000)+"원 초과")
+        }else{
+            document.write("돈 관리 잘했어요!")
+        }
+    </script>
+</body>
+</html>

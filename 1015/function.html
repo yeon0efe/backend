@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        #galleryZone {text-align:center;}
+    </style>
+</head>
+<body>
+    <div id="galleryZone">
+        <p><img src="images/pic_1.jpg" id="photo"></p>
+        <p class="bottons">
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+        </p>
+
+    </div>
+
+    <script>
+        var num=1;
+        function gallery(direct){
+            if(direct){ // if괄호안에 1이 오면 True 0이 오면 False
+                if(num == 8) return;  // num==8 이면 빠져나간다(동작안함)
+                num++;
+            }else{
+                if(num == 0) return;
+                num --;
+            }
+            var imgTag = document.getElementById('photo');
+            //var img1 = imgTag.getAttribute('id');
+
+            //src,id,class,alt의 내용을 불러옴
+            // console.log(img1);
+
+            imgTag.setAttribute('src',"images/pic_"+num+".jpg")
+            
+        }
+    </script>
+
+
+</body>
+</html>
