@@ -1,0 +1,9 @@
+document.querySelector()는 JavaScript에서 가장 많이 사용되는 메서드 중 하나로, 
+CSS 선택자(selector)를 사용하여 DOM(Document Object Model)에서 첫 번째로 일치하는 요소를 반환합니다. 
+원하는 HTML 요소를 선택하고 조작할 때 유용하게 사용됩니다.
+
+
+querySelector() vs querySelectorAll()
+querySelector()는 첫 번째 일치하는 요소만 반환합니다.
+querySelectorAll()은 일치하는 모든 요소를 NodeList로 반환합니다.
+
