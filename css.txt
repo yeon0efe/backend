@@ -11,3 +11,5 @@ a{text-decoration: none; color:#333;}
 
 
 닷홈 babayeon pwd:!
+
+https://whaleon.naver.com/on/2108411211?p=483e7266af284010a0c3568c26acdef2#detail
