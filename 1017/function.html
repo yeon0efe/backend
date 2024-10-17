@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //자바스크립트의 함수 : 코드를 재사용하고 효율적으로 관리
+
+        //두 숫자를 더하는 함수
+
+        //함수 정의
+        function addNum(a,b){
+            return a+b;
+        }
+        //함수 호출
+        let result = addNum(5,4);
+        let result1= addNum(7,8);
+        
+        document.write(result+" "+result1,"<br>");
+
+        //매개변수 : 어떤 인수를 받을 준비가 되어있는 변수 
+        // 위의 함수로 예를 들면 a,b
+
+
+        function sayHello(){ //매개변수가 없는 함수
+            document.write("hello world!!","<br>");
+        }
+        sayHello(); //함수 호출 > Hello,world!! 출력
+
+
+        //익명함수
+        let multiply = function(x,y){
+            return x * y;
+        }
+        console.log(multiply(4,5));
+
+
+        let divide = function(x,y){
+            return x / y;
+        }
+        document.write(divide(8,4));
+        //function 대신 (매개변수)=> {} 이렇게 사용가능
+        // lef divide = (x,y) => {x/y}      
+        //실행문이 한줄이라 중괄호도 생략가능
+        //let divide = (x,y) => x/y 
+
+        // 화살표함수
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

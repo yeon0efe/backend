@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+ 
+        let globalVar = "전역변수";
+        
+        function showVar(){
+            let localVar="지역변수";
+            console.log(globalVar);
+            console.log(localVar);
+        }
+
+        //globalVar : 함수 외부에서 실행 (전역변수)
+        //함수의 내부와 외부 모두에서 접근이 가능하다.
+
+        //localVar : 함수 내부에서 실행 (지역변수)
+        //변수가 선언된 함수의 내부에서만 접근이 가능하다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

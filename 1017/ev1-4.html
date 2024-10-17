@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+ body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        border: 2px solid #333;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="btn" id="btn1">Button1</div>
+   
+
+<script>
+  let btn = document.querySelector(".btn");
+
+//     btn.addEventListener("mouseover",function(){
+//         btn.style.backgroundColor = "#333"; //배경색 변경
+//         btn.style.color = "#fff"; // 글자색 변경   
+//     });
+
+//     btn.addEventListener("mouseout",function(){
+//         btn.style.backgroundColor = "#f1f1f1"; //배경색 변경
+//         btn.style.color = "#333"; // 글자색 변경   
+//     });
+
+    
+function color1(){
+    btn.style.backgroundColor = "#333"; //배경색 변경
+    btn.style.color = "#fff"; // 글자색 변경   
+}
+function color2(){
+    btn.style.backgroundColor = "red"; //배경색 변경
+    btn.style.color = "white"; // 글자색 변경   
+}
+
+btn.addEventListener("mouseover",color1);
+btn.addEventListener("mouseout",color2);
+//함수를 미리 선언하고 함수 불러주기 (간결함)
+//함수 이름 자리에 익명함수를 인수로 줄 수 있다.
+
+
+       
+
+   
+
+  
+</script>
+
+</body>
+</html>

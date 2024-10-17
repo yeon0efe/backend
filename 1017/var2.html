@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function varExample(){
+            var x=1;
+            if(true){
+                var x=2;
+                document.write(x,"<br>");
+            }
+            document.write(x,"<br>");  
+            
+        }
+        varExample();
+
+        document.write(x,"<br>");   //출력안됨
+
+        
+        // 중괄호 안에 있는 범위를 스코프라고하는데 let이랑 const는 블럭스코프를 따른다.
+        // var은 함수스코프, 함수의 스코프만 신경쓴다.
+
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
