@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">Hello, World!</div> 
+
+    <div class="myClass">First Div</div> 
+    <div class="myClass">Second Div</div>
+
+<script> 
+
+    const element = document.getElementById("myDiv"); 
+    /* getElementById 
+        ID를 선택한다
+        따옴표 안에 ID의 이름만 적는다
+        ID는 단 하나의 요소가 하나의 ID만 갖는다. */
+
+
+    const elements = document.getElementsByClassName("myClass"); 
+    console.log(elements[0].textContent); // "First Div" 출력 
+    console.log(elements[1].textContent); // "Second Div" 출력 
+    /* getElementByClassName
+        특정 클래스를 가진 모든 요소를 선택
+        여러 요소를 가진 클래스를 선택시, 그 중 첫번째 클래스를 호출 */
+
+        
+
+</script>
+
+
+</body>
+</html>
