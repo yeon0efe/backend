@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{margin: 0; padding: 0;}
+body{font-family: "Noto Sans KR", sans-serif; }
+ul,li{list-style: none;}
+a{text-decoration: none; color:#333;}
+.cf::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* -------------------http://bhher1.dothome.co.kr/------------------------------------------- */
+
+header{
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    position:relative;
+}
+.logo{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);    
+}
+.nav{
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    
+    z-index: 1;
+    
+}
+.nav>ul{
+    width: 1000px;
+    height: 50px;
+    
+    margin:0 auto;
+    text-align: center;
+}
+.nav:hover{
+    height: 300px;
+}
+.nav>ul>li{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    position: relative; /* 하위 메뉴 배치를 위한 설정 */
+}
+.nav>ul>li>a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* 서브 메뉴 스타일 */
+.nav>ul>li .sub {
+    display: none; /* 기본적으로 서브 메뉴 숨김 */
+    position: absolute; /* 부모 기준으로 배치 */
+    top: 50px; /* 부모 요소 아래에 위치 */
+    left: 0;
+    width: 150px; /* 서브 메뉴 너비 */
+    background-color: white; /* 서브 메뉴 배경 */
+    z-index: 10; /* 서브 메뉴가 다른 요소 위에 표시되도록 */
+}
+
+/* 상위 메뉴 hover 시 모든 서브 메뉴가 표시되도록 설정 */
+.nav:hover ul.sub {
+    display: block; /* 모든 서브 메뉴를 동시에 표시 */
+}
+
+/* 서브 메뉴 항목 스타일 */
+.nav>ul>li .sub li {
+    height: 50px;
+}
+.nav>ul>li .sub li a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    background-color: white; /* 서브 메뉴 배경 */
+
+}
+
+.hero{
+    width: 100%;
+    position: absolute;
+    top:150px;
+
+}
