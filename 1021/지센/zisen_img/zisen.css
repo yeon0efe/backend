@@ -9,6 +9,21 @@ a{text-decoration: none; color:#333;}
     clear: both;
 }
 /* -------------------http://bhher1.dothome.co.kr/------------------------------------------- */
+/* li에 inline=block 주고 부모인 ul에 text-align:center 가 적절하다. position float 사용x  */
+
+/* div > nav > ul > li > ul > li 구조 만들고
+
+nav > ul ul 임시로 가려주기
+
+div 이용해서 상단 배치
+nav 이용해서 메뉴바 하단 구분선 그어주기
+nav ul li 인라인블럭, nav ul  text-align:center => 중앙정렬
+a나 li에 패딩 또는 마진으로 메뉴 배치 먼저 할 생각 X 
+먼저 a의 너비를 적절하게 준다.
+a는 대표적인 인라인요소.
+높이값 너비값 주려면 block으로 만들어줄것.*/
+
+
 
 header{
     width: 1000px;
@@ -22,67 +37,56 @@ header{
     top:50%;
     transform: translate(-50%,-50%);    
 }
-.nav{
+
+
+.lnb{
+    /* nav의 부모 div */
+    position: absolute;
+    left:0;
+    top:100px;
     width: 100%;
-    height: 50px;
-    overflow: hidden;
-    
-    z-index: 1;
-    
+    /* 일정 사이즈를 주고 포지션으로 배치X 
+    전체너비 주고 양쪽에 여백 만들고 싶으면 padding 주기 */
 }
-.nav>ul{
-    width: 1000px;
-    height: 50px;
-    
-    margin:0 auto;
+
+.lnb .nav{
+    /* 메뉴 하단의 긴 불투명선은 nav로 작성 */
+    width: 100%;
+    border-bottom:1px solid rgba(220,220,220,.5);
+    box-sizing: border-box;
+}
+
+.lnb .nav > ul{
     text-align: center;
 }
-.nav:hover{
-    height: 300px;
-}
-.nav>ul>li{
+.lnb .nav > ul > li{
     display: inline-block;
-    width: 150px;
-    height: 50px;
-    position: relative; /* 하위 메뉴 배치를 위한 설정 */
 }
-.nav>ul>li>a{
+
+.lnb .nav ul ul {display: none;}
+
+.lnb .nav > ul > li a{
     display: block;
-    height: 50px;
-    line-height: 50px;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    position: relative; /*a:after의 부모*/
 }
 
-/* 서브 메뉴 스타일 */
-.nav>ul>li .sub {
-    display: none; /* 기본적으로 서브 메뉴 숨김 */
-    position: absolute; /* 부모 기준으로 배치 */
-    top: 50px; /* 부모 요소 아래에 위치 */
-    left: 0;
-    width: 150px; /* 서브 메뉴 너비 */
-    background-color: white; /* 서브 메뉴 배경 */
-    z-index: 10; /* 서브 메뉴가 다른 요소 위에 표시되도록 */
+.lnb .nav > ul > li> a:after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-1px;
+    width: 0%;
+    height: 2px;
+    background-color: rgba(255,90,71,.5);
 }
 
-/* 상위 메뉴 hover 시 모든 서브 메뉴가 표시되도록 설정 */
-.nav:hover ul.sub {
-    display: block; /* 모든 서브 메뉴를 동시에 표시 */
-}
-
-/* 서브 메뉴 항목 스타일 */
-.nav>ul>li .sub li {
-    height: 50px;
-}
-.nav>ul>li .sub li a {
-    display: block;
-    height: 50px;
-    line-height: 50px;
-    background-color: white; /* 서브 메뉴 배경 */
-
-}
-
-.hero{
+.lnb .nav > ul > li > a:hover:after{
     width: 100%;
-    position: absolute;
-    top:150px;
-
 }
+
+/* 하단 구분선은 hover 됐을 때 나타남
+=> a:after의 가로 사이즈가 0이었다가 hover되면 100%로 변경되어야 함.  */

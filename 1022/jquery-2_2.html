@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+/*
+요구사항:
+#list1의 짝수 인덱스 항목(li)에 배경색을 lightblue로 적용하세요.
+#list2의 "항목C"처럼 <span>을 포함한 항목은 글자 색상을 purple로 변경하세요.
+#list1의 첫 번째 항목에 글자 크기를 20px로 설정하세요.
+
+#list2에서 클래스가 highlight인 항목의 배경색을 orange로 설정하세요.
+
+#list2의 a 태그를 가진 항목의 배경색을 yellow로 설정하세요.
+
+#list1에 마지막으로 <li> 항목을 추가하고, 텍스트는 "새 항목"으로 설정하세요.
+#list2의 두 번째 항목에 글자 스타일을 italic으로 변경하세요.*/
+$(function(){
+    $("#list1 li:even").css("background","lightblue");
+    $("#list2 li:has('span')").css("color","purple");
+    $("#list1 li:first").css('font-size','20px');
+    $("#list2 li").filter(".highlight").css('background','orange');
+    $("#list2 li").find('a').css('background','yellow');
+    $("#list1").append("<li>새 항목</li>");
+    $("#list2 li").eq(1).css('font-style','italic');
+            /*eq(n)는 밖으로 나와도 되지만
+            lt,gt는 $()밖으로 나오면 안된다. :(콜론)으로 같이 사용해줘야함.*/    
+
+});
+$("#list2 li").eq(1).css('font-style','italic');
+$("#list2 li:eq(1)").css('font-style','italic');
+
+/*
+ 
+    1) $('#list2 li:has(a)').css('background', 'yellow');
+    2) $("#list2 a").css("background-color", "yellow");
+
+    둘의 차이:
+    has는 부모요소의 기준에서 자식(a)를 가진 부모를 찾고, 해당하는 부모요소를 반환한다.
+    2번은 a에 적용
+   
+</script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>탐색 선택자 및 html 조작 문제</h1>
+        <ul id="list1">
+            <li>항목1</li>
+            <li>항목2</li>
+            <li>항목3</li>
+            <li>항목4</li>
+            <li>항목5</li>
+        </ul>
+        <ul id="list2">
+            <li>항목A</li>
+            <li class="highlight">항목B</li>
+            <li><span>항목C</span></li>
+            <li>항목D</li>
+            <li><a href="#">항목E</a></li>
+        </ul>
+    </div>
+</body>
+</html>
