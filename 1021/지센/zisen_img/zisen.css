@@ -9,27 +9,14 @@ a{text-decoration: none; color:#333;}
     clear: both;
 }
 /* -------------------http://bhher1.dothome.co.kr/------------------------------------------- */
-/* li에 inline=block 주고 부모인 ul에 text-align:center 가 적절하다. position float 사용x  */
-
-/* div > nav > ul > li > ul > li 구조 만들고
-
-nav > ul ul 임시로 가려주기
-
-div 이용해서 상단 배치
-nav 이용해서 메뉴바 하단 구분선 그어주기
-nav ul li 인라인블럭, nav ul  text-align:center => 중앙정렬
-a나 li에 패딩 또는 마진으로 메뉴 배치 먼저 할 생각 X 
-먼저 a의 너비를 적절하게 준다.
-a는 대표적인 인라인요소.
-높이값 너비값 주려면 block으로 만들어줄것.*/
-
-
 
 header{
     width: 1000px;
     height: 100px;
     margin: 0 auto;
     position:relative;
+    padding:0 200px;
+    box-sizing: border-box;
 }
 .logo{
     position: absolute;
@@ -37,16 +24,13 @@ header{
     top:50%;
     transform: translate(-50%,-50%);    
 }
-
+/* ------------------------------------- */
 
 .lnb{
-    /* nav의 부모 div */
-    position: absolute;
+    position:absolute;
     left:0;
     top:100px;
     width: 100%;
-    /* 일정 사이즈를 주고 포지션으로 배치X 
-    전체너비 주고 양쪽에 여백 만들고 싶으면 padding 주기 */
 }
 
 .lnb .nav{
@@ -54,18 +38,36 @@ header{
     width: 100%;
     border-bottom:1px solid rgba(220,220,220,.5);
     box-sizing: border-box;
+    text-align: center;
+    height: 60px; 
 }
 
 .lnb .nav > ul{
     text-align: center;
+    display: inline-block;
+
+    height: 60px;
+    overflow: hidden;
+
+
+}
+.lnb .nav > ul:hover ul{
+   /* opacity: 1;
+   visibility: visible; */
+   height: 190px;
+}
+.lnb .nav > ul:hover{
+    overflow: visible;
 }
 .lnb .nav > ul > li{
     display: inline-block;
+    transition: all 0.5s;
+
 }
 
-.lnb .nav ul ul {display: none;}
 
 .lnb .nav > ul > li a{
+    
     display: block;
     width: 160px;
     height: 60px;
@@ -77,16 +79,74 @@ header{
 .lnb .nav > ul > li> a:after{
     content:"";
     position:absolute;
-    left:0;
-    bottom:-1px;
+    left:50%;
+    bottom:1px;
     width: 0%;
     height: 2px;
-    background-color: rgba(255,90,71,.5);
+    background-color: #b4252d;
+    opacity: 0.5;
+    transition: all 0.3s;
 }
 
 .lnb .nav > ul > li > a:hover:after{
     width: 100%;
+    left:0;
 }
 
-/* 하단 구분선은 hover 됐을 때 나타남
-=> a:after의 가로 사이즈가 0이었다가 hover되면 100%로 변경되어야 함.  */
+
+
+/*
+a:after에 left:50% a:hover:after에 left:0
+*/
+
+.lnb .nav ul ul{
+    position:absolute; 
+    /*메뉴가 계단식(하단기준정렬)에서 상단기준정렬로 바뀜. */
+    text-align: center;
+    width: 160px; /* 하위 ul의 너비를 명확히 설정 */
+    /* visibility: hidden;opacity: 0; */
+    height: 0;
+    overflow: hidden;
+    z-index: 30;
+    transition: all 0.5s;
+}
+
+.lnb .nav ul ul a{
+        display: inline;
+        font-size: 15px;
+        position: relative; /* a:after의 부모*/
+        text-align: center; 
+        
+}
+.lnb .nav ul ul a:hover{
+    color:#b4252d;
+}
+.lnb .nav ul ul a:after{
+    content:"";
+    position:absolute;
+    /*밑줄의 크기가 ul만큼 커진다 -> 기준점 a로 잡아주기(position:relative)*/
+    left:50%;
+    bottom:-5px;
+    height: 2px;
+    width: 0;
+    opacity: 0.5;
+    background-color: #b4252d;
+}
+.lnb .nav ul ul a:hover:after{
+    width: 100%;
+    left:0;
+}
+
+.shadow{
+    width: 100%;
+    position: absolute;
+    top:60px;
+    height: 0px;
+    background-color: white;
+    transition: all 0.5s;
+    opacity: 0.8;
+}
+
+.lnb .nav > ul:hover +.shadow {
+    height: 190px;
+}
