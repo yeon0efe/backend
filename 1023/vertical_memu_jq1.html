@@ -42,7 +42,7 @@ ul{list-style: none;}
 </style>
 
 <script>
-$(function(){
+// $(function(){
 //하위메뉴 전부 안보이게 하기
 //$('#navi li ul').css('display','none');
 //$('#navi li ul').hide();
@@ -55,24 +55,38 @@ $(function(){
 //$('#navi li:first ul').show();
 
 
-$('#navi li ul').hide(); //모든 ul을 숨긴다.
+// $('#navi li ul').hide(); //모든 ul을 숨긴다.
 
-$('#navi>li>a').click(function(){
-   var abc =  $(this).next('.sub').css('display');
-   // alert(abc);
-    if(abc == 'none'){
-        $('.sub').slideUp(); //모든 .sub닫고
-        $(this).next('.sub').slideDown();
-    }else{
-        $(this).next('.sub').slideUp();
-    }
+// $('#navi>li>a').click(function(){
+//    var abc =  $(this).next('.sub').css('display');
+//    // alert(abc);
+//     if(abc == 'none'){
+//         $('.sub').slideUp(); //모든 .sub닫고
+//         $(this).next('.sub').slideDown();
+//     }else{
+//         $(this).next('.sub').slideUp();
+//     }
 
-    return false;
-});
+//     return false;
+// });
 
 
 
-});
+// });
+
+
+
+
+$(function(){
+    $('#navi li ul').hide();
+
+    $('#navi li a').click(function(){
+        $(this).next().stop().slideToggle()
+        .parent().siblings().find('.sub').slideUp();
+
+        return false;
+    })
+})
 </script>
 
 
