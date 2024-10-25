@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.6.0.js"></script> -->
+
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
 <style>
 *{margin: 0;padding:0 ;}
 ul{list-style: none;}
@@ -65,6 +67,44 @@ h1{text-align: center;}
     <script>
         $(function(){
             var num = 0;
+            var li_w=80;
+            var copy1= $('#banner li:lt(3)').clone();
+
+            $('#banner').append(copy1);
+            
+            $('.next').click(function(){
+                if(num==5){
+                    num=0;
+                    $('#banner').css('margin-left','0');
+                }
+                num++;
+                $('#banner').stop().animate({'margin-left':-li_w*num},300);
+                return false;
+            });
+            $('.prev').click(function(){
+                if(num==0){
+                    num=5;
+                    $('#banner').css('margin-left','0');
+                }
+                num--;
+                $('#banner').stop().animate({'margin-left':-li_w*num},300);
+                return false;
+            });
+
+            setInterval(autoplay,2000);
+            function autoplay(){
+                if(num==5){
+                    num=0;
+                    $('#banner').css('margin-left','0');
+                }
+                num++;
+                $('#banner').stop().animate({'margin-left':-li_w*num},300);
+            };
+        })
+    </script>
+    <!-- <script>
+        $(function(){
+            var num = 0;
             var li_w = 80;
             var copy1 = $('#banner li:lt(3)').clone();
             //#banner li중에 index번호가 3보다 작은 (0,1,2) 
@@ -110,6 +150,6 @@ h1{text-align: center;}
 
 
 
-    </script>
+    </script> -->
 </body>
 </html>

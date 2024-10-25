@@ -10,22 +10,38 @@
     <title>Document</title>
     <script>
 
-    $(function(){
-    $(".tab_menu a").click(function(){
-        //let orgTarget = e.target.getAttribute('href');
-        let orgTarget = $(this).attr('href');
-        //alert(orgTarget);
-        $('#tabContent > div').hide();
+    // $(function(){
+    // $(".tab_menu a").click(function(){
+    //     //let orgTarget = e.target.getAttribute('href');
+    //     let orgTarget = $(this).attr('href');
+    //     //alert(orgTarget);
 
-        $(orgTarget).show(); //id 선택자로 인식
-        $(".tab_menu a").removeClass('active');
-        $(this).addClass('active');
+    //     $('#tabContent > div').hide();
+    //     $(orgTarget).show(); //id 선택자로 인식
+    //     $(".tab_menu a").removeClass('active');
+    //     $(this).addClass('active');
 
-        return false;
-        // e.preventDefault();
-    });
+    //     return false;
+    //     // e.preventDefault();
+    // });
 
-    });
+    // });
+
+
+        $(function(){
+            $('.tab_menu li a').click(function(){
+
+                var orgTarget=$(this).attr('href');
+
+                $('.tab_menu a').removeClass('active');
+                $(this).addClass('active');
+
+                $('#tabContent div').hide();
+                $(orgTarget).show();
+
+                return false;
+            })
+        })
     </script>
 </head>
 <body>

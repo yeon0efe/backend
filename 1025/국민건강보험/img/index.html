@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        *{margin:0; padding:0;}
+        ul,li{list-style: none;}
+        body{font-family: "Noto Sans KR", sans-serif;}
+
+        section{
+            background:#feeee6 url(./bg_app.png) no-repeat -5px -10px;
+            background-size:85px 85px;
+            width: 400px;
+            height: 300px;
+            margin: 40px auto;
+            border:1px solid transparent;
+            box-sizing: border-box;
+            padding:20px 30px 30px 30px
+
+        }
+        .slide_zone{
+            width: 330px;
+            height: 250px;
+            margin:0 auto;
+            position: relative;
+        }
+        .slide_frame{
+            width:330px;
+            height:220px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .slide_list{
+            width:1700px;
+            height:220px ;
+        }
+        .slide_list img{
+            width:330px;
+            height:220px;
+            float:left;
+        }
+        .slide_zone p{
+            font-weight: 600; 
+            display: inline-block;
+            font-size:18px;
+       
+        }
+        .button{
+            height: 30px;
+            width: 70px;
+            border:1px solid red;
+            box-sizing: border-box;
+
+            position:absolute;
+            top:0px;
+            right:0px;
+        }     
+        .pause .on{
+            background: url(./ico_16_play.png);
+        }
+   
+</style>
+
+<script>
+    $(function(){
+        var num=0;
+        var li_w=330;
+        var copy1=$('.slide_list li:first').clone();
+        $('.slide_list li:last').append(copy1);
+    
+        $(".next").click(function(){
+            if(num===4){
+                num=0
+                $('.slide_list li').css('margin-left',0)
+            } 
+            num++;
+            $('.slide_list li').stop().animate({'margin-left': -li_w * num}, 500);
+        })
+
+        $(".prev").click(function(){
+            if(num===0){
+                num=4
+                $('.slide_list li').css('margin-left',-li_w * num)
+            }
+            num--;
+            $('.slide_list li').stop().animate({'margin-left': -li_w * num}, 500);
+        })
+        
+       //pause 어케함..?
+
+    })
+</script>
+</head>
+<body>
+    <section class="contents">
+        <div class="slide_zone">
+            <p>홍보존</p>
+            <div class="button">
+                <p> 
+                    <a href="#" class="prev"><img src="./ico_16_prev.png" alt=""></a>
+                    <a href="#" class="pause"><img src="./ico_16_pause.png" alt=""></a>
+                    <a href="#" class="next"><img src="./ico_arr_20_right.png" alt=""></a>
+                </p>
+            </div>
+
+            
+            <div class="slide_frame">
+                <ul class="slide_list">
+                    <li><a href="#"><img src="./pr_20221114.png"></a></li>
+                    <li><a href="#"><img src="./pr_20240429.png"></a></li>
+                    <li><a href="#"><img src="./20240208_pr_pc01.png"></a></li>
+                    <li><a href="#"><img src="./20240905_pr_pc01.png"></a></li>
+                </ul>
+            </div>
+        </div>
+   
+	</section>
+</body>
+</html>
