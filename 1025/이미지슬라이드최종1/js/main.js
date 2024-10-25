@@ -17,7 +17,7 @@ $(function(){
        i++;
         if(i==5){
             $('.imgs').stop().animate({'margin-left':-i*100+"%"},600,
-                function(){$(".imgs").css("margin-left",0);//콜백함수
+                function(){$(".imgs").css("margin-left",0);
                 });
             i=0;
         }else{
@@ -60,7 +60,7 @@ function timer(){
 
 var id = setInterval(timer, 3000 );
 
-$('#wrap').mouseover(function(){
+$('#wrap').mouseenter(function(){
     clearInterval(id);
 });
 $('#wrap').mouseleave(function(){

@@ -15,7 +15,9 @@ $(function(){
    $("#rightBtn").click(function(){
     $('#box2').stop().animate({left : "+=100px"},500); //left=left+100
    });
-   
+   $('#leftBtn').click(function(){
+        $('#box2').clearQueue().animate({left:"-=100px"},500); //left = left * 100
+    });
 });
 </script>
 

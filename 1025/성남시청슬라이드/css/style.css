@@ -71,7 +71,7 @@ ul{list-style: none;}
     background: url(../img/main_bn_stop.png) no-repeat 0 2px;
 }
 
-.slide_but > p > a.pause.on{
+.slide_but > p > a.pause.on{ 
     background: url(../img/main_bn_play.png) no-repeat 0 2px;
 }
 .slide_but > p > a.next{

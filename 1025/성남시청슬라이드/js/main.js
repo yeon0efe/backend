@@ -31,22 +31,24 @@ $(function(){
         $('.slide_but p strong').text(popIndex+1);
     });
 
-    var id;
-    id = setInterval(popAuto,1000);
+var id;
+id = setInterval(popAuto,3000);
 
-    function popAuto(){
-        pop_next.trigger('click')
+function popAuto(){
+    pop_next.trigger('click');
+}
+//일시정지 ,플레이 버튼 설정
+pop_pause.click(function(){
+    if($(this).hasClass('on')==false){
+        $(this).addClass('on');
+        clearInterval(id);
+    }else{
+        $(this).removeClass('on');
+        id = setInterval(popAuto,3000);
     }
-    pop_pause.click(function(){
-        if($(this).hasClass('on')==false){
-            $(this).addClass('on');
-        }else{
-            $(this).addClass('on');
-            id = setInterval(popAuto,3000);
-        }
-    })
+
+});
 
 
 
-    
 });
