@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        *{margin:0; padding:0;}
+        ul,li{list-style: none;}
+        body{font-family: "Noto Sans KR", sans-serif;}
+
+        section{
+            background:#feeee6 url(./bg_app.png) no-repeat -5px -10px;
+            background-size:85px 85px;
+            width: 400px;
+            height: 320px;
+            margin: 40px auto;
+            border:1px solid transparent;
+            box-sizing: border-box;
+
+        }
+       
+        .top{
+           
+            width: 330px;
+            height: 30px;
+            margin: 20px auto 10px;
+            
+        }
+        .top p{
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            font-weight: 600;
+        }
+        .slide_frame{
+            width:330px;
+            height:220px;
+            margin:0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .slide_list{
+            width:1700px;
+            height:220px ;
+        }
+        .slide_list img{
+            width:330px;
+            height:220px;
+            float:left;
+        }
+   
+        .button{
+            height: 32px;
+            width: 96px;
+            
+            float:right;
+            position: relative;
+            
+        }     
+  
+        .next{
+
+            background: url(./ico_16_prev.png) no-repeat center center;
+            transform: scaleX(-1);
+            /* 이미지 반전(prev와 동일함)  */
+            top:0;
+            right:0;
+            width: 32px;
+            height: 32px;
+            position:absolute;
+        }
+        .prev{
+            background: url(./ico_16_prev.png) no-repeat center center ; 
+            top:0; 
+            left:0;
+            width: 32px;
+            height: 32px;
+            position:absolute;
+        }
+        .pause{background: url(./ico_16_pause.png) no-repeat center center;
+            top:0;
+            left:33px;
+            width: 32px;
+            height: 32px;
+            position:absolute;
+        }
+        .pause .on{
+            background: url(./ico_16_play.png) no-repeat center center;
+            top:0;
+            left:32px;
+            width: 32px;
+            height: 32px;
+            position:absolute;
+        }
+   
+</style>
+
+<script>
+$(function(){
+    var num = 0;
+    var li_w = 330;
+    var autoSlide; // 자동 슬라이드 변수 선언
+    var copy1 = $('.slide_list li:first').clone();
+    $('.slide_list').append(copy1); // 클론을 마지막에 추가
+
+    $(".next").click(function() {
+        if (num === 4) {
+            num = 0;
+            $('.slide_list').css('margin-left', 0);
+        } 
+        num++;
+        $('.slide_list').stop().animate({'margin-left': -li_w * num}, 500);
+    });
+
+    $(".prev").click(function() {
+        if (num === 0) {
+            num = 4;
+            $('.slide_list').css('margin-left', -li_w * num);
+        }
+        num--;
+        $('.slide_list').stop().animate({'margin-left': -li_w * num}, 500);
+    });
+
+    $(".pause").click(function() {
+        if ($(this).hasClass('on')) {
+            $(this).removeClass('on');
+            startSlide(); // 슬라이드 재시작
+            $(this).css('background', 'url(./ico_16_pause.png) no-repeat center center'); // 원래의 pause 이미지로 변경
+        } else {
+            $(this).addClass('on');
+            stopSlide(); // 슬라이드 일시정지
+            $(this).css('background', 'url(./ico_16_play.png) no-repeat center center'); // play 이미지로 변경
+        }
+    });
+
+    function startSlide() {
+        autoSlide = setInterval(function() {
+            $(".next").click(); // next 클릭 기능 호출
+        }, 3000); // 3초 간격으로 자동 재생
+    }
+
+    function stopSlide() {
+        clearInterval(autoSlide); // 자동 슬라이드 정지
+    }
+
+    startSlide(); // 페이지 로드 시 자동 슬라이드 시작
+});
+
+
+</script>
+</head>
+<body>
+    <section class="contents">
+    
+            <div class="top">
+                <p>홍보존</p>
+                <div class="button">
+                    <p> 
+                        <a href="#" class="prev"></a>
+                        <a href="#" class="pause"></a>
+                        <a href="#" class="next"></a>
+                    </p>
+                </div>
+             </div>
+            
+            <div class="slide_frame">
+                <ul class="slide_list">
+                    <li><a href="#"><img src="./pr_20221114.png"></a></li>
+                    <li><a href="#"><img src="./pr_20240429.png"></a></li>
+                    <li><a href="#"><img src="./20240208_pr_pc01.png"></a></li>
+                    <li><a href="#"><img src="./20240905_pr_pc01.png"></a></li>
+                </ul>
+            </div>
+        
+   
+	</section>
+</body>
+</html>
