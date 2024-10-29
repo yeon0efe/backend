@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    table{text-align: center;}
+    /* table은 안에서 사용된 모든 tr,td등을 상속 */
+    /* 상위의 table에 중앙정렬 줌 -> 전체 중앙정렬 */
+    /* table보다 더 상위에 있는 body에도 가능하다.*/
+
+    .left{text-align: left;}
+    /*  */
+   
+</style>
+
+
+</head>
+<body>
+    <table border="1">
+        <colgroup>
+            <col style="width:150px"/>
+            <col style="width:150px"/>
+            <col style="width:150px"/>
+            <col style="width:150px"/>
+            <col style="width:150px"/>
+        </colgroup>
+           
+        <tr>
+            <th rowspan="2">과목+내용</th>
+            <td colspan="2">html+css </td>
+
+            <td>javascript</td>
+            <td>jQeury</td>
+        </tr>
+
+        <tr>
+            
+            <td class="left">쉽고 </td>
+            <td>재미있고</td>
+            <td>좀 어렵지만</td>
+            <td>동적이다.</td>
+        </tr>
+
+    </table>
+</body>
+</html>
