@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{margin: 0; padding: 0;}
+body{font-family: "Noto Sans KR", sans-serif; }
+ul,li{list-style: none;}
+a{text-decoration: none; color:#333;}
+.cf::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* -------------------http://bhher1.dothome.co.kr/------------------------------------------- */
+
+header{
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    position:relative;
+    padding:0 200px;
+    box-sizing: border-box;
+}
+.logo{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);    
+}
+/* ------------------------------------- */
+
+.lnb{
+    position:absolute;
+    left:0;
+    top:100px;
+    width: 100%;
+}
+
+.lnb .nav{
+    /* 메뉴 하단의 긴 불투명선은 nav로 작성 */
+    width: 100%;
+    border-bottom:1px solid rgba(220,220,220,.5);
+    box-sizing: border-box;
+    text-align: center;
+    height: 60px; 
+}
+
+.lnb .nav > ul{
+    text-align: center;
+    display: inline-block;
+
+    height: 60px;
+    overflow: hidden;
+
+
+}
+.lnb .nav > ul:hover ul{
+   /* opacity: 1;
+   visibility: visible; */
+   height: 190px;
+}
+.lnb .nav > ul:hover{
+    overflow: visible;
+}
+.lnb .nav > ul > li{
+    display: inline-block;
+    transition: all 0.5s;
+
+}
+
+
+.lnb .nav > ul > li a{
+    
+    display: block;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    position: relative; /*a:after의 부모*/
+}
+
+.lnb .nav > ul > li> a:after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:1px;
+    width: 0%;
+    height: 2px;
+    background-color: #b4252d;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.lnb .nav > ul > li > a:hover:after{
+    width: 100%;
+    left:0;
+}
+
+
+
+/*
+a:after에 left:50% a:hover:after에 left:0
+*/
+
+.lnb .nav ul ul{
+    position:absolute; 
+    /*메뉴가 계단식(하단기준정렬)에서 상단기준정렬로 바뀜. */
+    text-align: center;
+    width: 160px; /* 하위 ul의 너비를 명확히 설정 */
+    /* visibility: hidden;opacity: 0; */
+    height: 0;
+    overflow: hidden;
+    z-index: 30;
+    transition: all 0.5s;
+}
+
+.lnb .nav ul ul a{
+        display: inline;
+        font-size: 15px;
+        position: relative; /* a:after의 부모*/
+        text-align: center; 
+        
+}
+.lnb .nav ul ul a:hover{
+    color:#b4252d;
+}
+.lnb .nav ul ul a:after{
+    content:"";
+    position:absolute;
+    /*밑줄의 크기가 ul만큼 커진다 -> 기준점 a로 잡아주기(position:relative)*/
+    left:50%;
+    bottom:-5px;
+    height: 2px;
+    width: 0;
+    opacity: 0.5;
+    background-color: #b4252d;
+}
+.lnb .nav ul ul a:hover:after{
+    width: 100%;
+    left:0;
+}
+
+.shadow{
+    width: 100%;
+    position: absolute;
+    top:60px;
+    height: 0px;
+    background-color: white;
+    transition: all 0.5s;
+    opacity: 0.8;
+}
+
+.lnb .nav > ul:hover +.shadow {
+    height: 190px;
+}

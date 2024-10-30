@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        *{padding:0 ; margin: 0;}
+        body{
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+
+        
+        .main{
+            position: relative;
+            width: 1070px;
+            height: 800px;
+            border: 1px solid salmon; 
+            margin: 30px auto 0;
+            
+        }
+
+        .box{
+            position: absolute;
+            width: 260px;
+            height:260px;
+        }
+
+        .box img{
+            display: block;
+        }
+
+        .box1{left:0; top:0;}
+        .box2{width:260px;height:530px;left:270px; top:0;}
+        .box3{left:540px; top:0px}
+        .box4{left:810px; top:0px;}
+        .box5{left:0px; top:270px;}
+        .box6{width: 530px; height: 260px; right:0px;top:270px}
+        .box7{left:0px; top:540px}
+        .box8{width: 530px; height: 260px; left:270px; top:540px;}
+        .box9{right:0px; top:540px}
+
+        .box::before{
+            content: "";
+            position:absolute;
+            width:0%;
+            height:100%;
+            top:0;
+            left:0;
+            background-color: rgba(0,0,255,0.5);
+            transition: all 0.5s;
+        }
+        .box:hover::before{
+            width:100%;
+        }
+
+        .rowbox::before{
+            content: "";
+            position:absolute;
+            width:100%;
+            height:0%;
+            top:0;
+            left:0;
+            background-color: rgba(0,0,255,0.5);
+            transition: all 0.5s;
+        }
+        .rowbox:hover::before{
+            height:100%;
+        }
+
+        .box p{
+            
+            width:100%;
+            height:100%;
+            /* 높이값 너비값 직접 입력 > 이미지 사이즈가 각각 다르니 %로 입력. */
+            padding-top :30%;
+            box-sizing: border-box;
+            /* 상단에 붙은 텍스트 내려주기 + 사이즈 유지 */
+            position: absolute;
+            background:url(image/more.png) no-repeat 50% 65%;
+            /* no-repeat 빼먹음.. */
+            left: 0%;
+            top:0%;
+            color:white;
+            font-size: 13px;
+            text-align: center;
+            opacity: 0;
+        }
+        .box2 p{padding-top: 100%;}
+        /* padding은 너비를 기준으로 하기 때문.  */
+        .box6 p, .box8 p { padding-top: 15%; }
+        
+        /* .box6 p{padding-top:20%;}
+        .box8 p{padding-top:20%;} */
+        
+        .box:hover p{opacity: 1;}
+
+        
+    </style>
+</head>
+<body>
+    
+    <h2>사용자들이 가장 많이 찾으신 컨텐츠를 소개합니다</h2>
+
+    <div class="main">
+        
+        <div class="box box1"><img src="image/01.png" alt="">
+        <p>국내유일 청정 대나무숯으로<br>4번 걸러 더 깨끗해진<br>참이슬 Fresh </p></div>
+        <div class="box box2"><img src="image/02.jpg" alt="">
+        <p>청정라거<br>시대개막<br>TERRA</p></div>
+        <div class="box box3"><img src="image/03.jpg" alt="">
+            <p><br>언론 속 하이트진로의<br>다양한 소식들을 알려드립니다.</p></div>
+        <div class="box box4"><img src="image/4.png" alt="">
+            <p>12년 내공으로 만들어진<br>깊고 풍부한 Cream<br>生 All Mart Beer!</p></div>
+        <div class="box box5"><img src="image/05.png" alt="">
+            <p>하이트진로의 사회공헌 활동은<br>모두가 즐겁고 행복한 세상을<br> 만들기 위한 실천입니다. </p></div>
+        <div class="box box6 rowbox"><img src="image/06.png" alt="">
+            <p><br>더욱 업그레이드된 엑스트라 콜드 공법으로<br>라거 맥주 본연의 시원하고 청량한 맛을 극대화 한 hite</p></div>
+        <div class="box box7"><img src="image/7.png" alt="">
+        <p>목통숙성 원액과<br>깨끗한 이슬이 만나<br>은은한 맛과 향으로 태어나다.</p></div>
+        <div class="box box8 rowbox"><img src="image/8.png" alt="">
+            <p><br><br>하이트진로의 최신 광고영상을 소개합니다. </p></div>
+        <div class="box box9"><img src="image/9.jpg" alt="">
+            <p>하이트진로만의 최첨단 설비와<br>친환경 이념이 담긴<br>생산공정을 직접 만나보세요.</p></div>
+
+
+      
+    </div>
+</body>
+</html>
