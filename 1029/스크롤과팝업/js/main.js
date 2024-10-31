@@ -52,28 +52,28 @@ $(function(){
     //         $('#floatdiv ul li').removeClass('on');
     //         $('#floatdiv ul li').eq(5).addClass('on');
     //     }
-/*
-for(var i=0;i < 6;i++){
-     if(sct >= $('section>div').eq(i).offset().top){
-            $('nav ul li').removeClass('on');
-            $('nav ul li').eq(i).addClass('on');
-            $('#floatdiv ul li').removeClass('on');
-            $('#floatdiv ul li').eq(i).addClass('on');
-        }
+
+// for(var i=0;i < 6;i++){
+//      if(sct >= $('section>div').eq(i).offset().top){
+//             $('nav ul li').removeClass('on');
+//             $('nav ul li').eq(i).addClass('on');
+//             $('#floatdiv ul li').removeClass('on');
+//             $('#floatdiv ul li').eq(i).addClass('on');
+//         }
+//     }
+$('section > div').each(function(i){
+    if(sct >= $('section>div').eq(i).offset().top){
+        $('nav ul li').removeClass('on');
+        $('nav ul li').eq(i).addClass('on');
+        $('#floatdiv ul li').removeClass('on');
+        $('#floatdiv ul li').eq(i).addClass('on');
     }
-*/ 
+});
 
-$('section>div').each(function(){
-   if(sct >=$('serction>div').eq(i).offset().top){
-    $('nav ul li').removeClass('on')
-    $('nav ul li').eq(i).addClass('on');
-    $('floatdiv ul li').removeClass('on');
-    $('floatdiv ul li').eq(i).addClass('on');
 
-   } 
-})
 
-    });
+
+});
 
     $('nav ul li').click(function(){
         var i = $(this).index();

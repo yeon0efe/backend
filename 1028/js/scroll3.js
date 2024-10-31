@@ -1,10 +1,10 @@
 $(function(){
     
-    $(window).scroll(function(){ // 윈도우에서 스크롤 이벤트 발생할떄마다 실행되는 함수
+    $(window).scroll(function(){
         var sct = $(this).scrollTop();
-        //마우스 세로스크롤의 값(양)을 구해서 sct저장
+//마우스 세로스크롤의 값(양)을 구해서 sct저장
         $('.s_Top').text(sct);
-        //구해진 스크롤값을 실시간으로 .s_top 반영
+//구해진 스크롤값을 실시간으로 .s_top 반영
         if(sct >= 450 && sct <=1200){
             $('.left1').addClass('on');
         }else{
@@ -29,4 +29,3 @@ $(function(){
     });
 
 });
-
