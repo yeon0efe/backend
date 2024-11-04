@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul,li{list-style: none;}
+        .tabWrap{
+            margin:30px 50px;
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        .tab_menu{display: flex;}
+        .tab_menu li{
+            /* flex-wrap: nowrap; */
+            width: 33.3333%;
+            height: 30px;
+            border: 1px solid #666;
+            box-sizing: border-box;
+        }
+        .tab_menu li a{display:block; width: 100%; height: 100%;}
+        .tabWrap>div>div{width: 300px; height: 170px;}
+
+        .on{background-color: yellow;}
+    </style>
+
+    <script>
+        $(function(){
+            $('#content > div').hide(); 
+            $('#tab1').show();
+            $(".tab_menu li a").eq(0).addClass('on');
+
+            // 클릭은 li가 아니라 a를 하도록 설정
+            // a에 display:block 주고, 너비와 높이값을 100%주기(li에 높이와,너비값 설정되어 있음)
+            $(".tab_menu li a").click(function(){
+                $(".tab_menu li a").removeClass('on');
+                $(this).addClass('on')
+
+                var thistap = $(this).attr('href'); //attr.('href')는 a를 클릭해애만 작동 
+                // alert(thistap);
+                $('#content>div').hide();
+                $(thistap).show();
+
+                return false;
+            })
+          
+        })
+    </script>
+</head>
+<body>
+    
+
+    <div class="tabWrap">
+
+        <ul class="tab_menu">
+            <li><a href="#tab1">메뉴1</a></li>
+            <li><a href="#tab2">메뉴2</a></li>
+            <li><a href="#tab3">메뉴3</a></li>
+        </ul>
+
+        <div id="content">
+            <div id="tab1">1번 탭메뉴입니다.</div>
+            <div id="tab2">2번 탭메뉴입니다.</div>
+            <div id="tab3">3번 탭메뉴입니다.</div>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+</html>
