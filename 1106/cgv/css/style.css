@@ -11,7 +11,7 @@ body{font-family: 'Noto Sans KR', sans-serif; }
 }
 /* 공통속성 */
 .container{
-    position:relative;
+    /* position:relative; */
     width:980px; height:inherit; margin: 0 auto;
 }
 .cgv-ad-top{width: 100%; height: 80px; background: #acbed6;}
@@ -38,12 +38,12 @@ body{font-family: 'Noto Sans KR', sans-serif; }
 #header-content .contents .memberInfo-wrap ul > li:last-child{margin-right: 0;}
 #header-content .contents .memberInfo-wrap ul>li>a{display: block;}
 #header-content .contents .memberInfo-wrap ul>li>a>img{width: 36px; height: 36px}
-#header-content .contents .memberInfo-wrap ul>li>span{display: block; color: white; font-size: 13px;}
+#header-content .contents .memberInfo-wrap ul>li>span{display: block; color: #666; font-size: 13px;}
 
 #nav-wrap{
     width: 100%;
     height: 50px;
-    border-bottom: 3px solid #f40f0f;
+    border-bottom: 2px solid #f40f0f;
     box-sizing: border-box;
 }
 .nav{
@@ -51,7 +51,7 @@ body{font-family: 'Noto Sans KR', sans-serif; }
     padding: 12px 0 0 0;
 }
 .nav .navBg{width: 100%; height: 0; background: white; position: absolute; top:244px;
-    left: 0; padding: 0; transition: .3s; z-index: 999999;}
+    left: 0; padding: 0; transition: height .5s; z-index: 999999;}
 .nav:hover .navBg{ height: 300px;  padding: 20px 0}
 
 nav ul{width:720px; position: relative;z-index: 999999;}
@@ -75,7 +75,7 @@ nav ul{width:720px; position: relative;z-index: 999999;}
 .nav ul>li>dl{
     position: absolute;line-height: 30px; width: 150px; padding: 0 0 0 5px;
     box-sizing: border-box; height:0;  border-right: 1px solid #ccc; margin-top: 20px;
-    overflow: hidden; transition: height 0.3s;
+    overflow: hidden; transition: height 0.5s;
 }
 .nav:hover ul>li>dl{height:300px;overflow: visible;}
 .nav ul>li:nth-child(1)>dl{padding-left: 0}
@@ -109,6 +109,7 @@ nav ul{width:720px; position: relative;z-index: 999999;}
     width: 100%;
     height: 461px;
     background: #f2f2f2;
+   
 }
 #movieChartBeScreen_wrap .container{position: relative;  padding: 50px 0px 60px;}
 .tabBtn_wrap{overflow: hidden;}
@@ -134,20 +135,23 @@ nav ul{width:720px; position: relative;z-index: 999999;}
     text-decoration: none;
     color: #222;
     font-size: 14px; 
-    background: url(../img/arrowR_8x13.png) no-repeat 75px center/10px;
+    background: url(../img/arrowR.png) no-repeat 75px center/8px;
+    /* 맨뒤에 8px이 사이즈... */
 }
 .movieChart_list{
     margin-top: 20px;
     width: 1010px; /*margin-right:32 * 5 + 170*5 */
     height: 300px;
     overflow: hidden;
+
 }
-.movieChart_list .listWrap{float:left;}
+.movieChart_list .listWrap{
+    width: 5000px;
+}
 .movieChart_list .listWrap .slideBox{
     width: 170px;
     float: left;
     margin-right: 32px;
-    margin-bottom:10px;
     position: relative;
     counter-increment: myIndex;
 }
@@ -155,16 +159,16 @@ nav ul{width:720px; position: relative;z-index: 999999;}
     content: counter(myIndex) ;
     color: #fff;
     position: absolute;
-    bottom:72px;
-    left: 10px;
+    bottom:51px;
+    left: 8px;
     font-style: italic;
-    font-size: 26px;
+    font-size: 50px;
     z-index: 999;
 }
 .movieChart_list .listWrap .slideBox:last-child{margin-right: 0;}
 .movieChart_list .listWrap .slideBox .imgWrap{position: relative; height: 242.52px;  }
 
-.movieChart_list .listWrap .slideBox .imgWrap img{width: 100%}
+.movieChart_list .listWrap .slideBox .imgWrap img{width: 100%; border-radius: 10px;}
 .slideBox .imgWrap .movieAgeLimit_wrap{position: absolute;}
 .slideBox .imgWrap .screenType_wrap{position: absolute; right: 10px; bottom: 10px;  width: 34px;}
 .slideBox .imgWrap .screenType_wrap>i{height: 10px;  width: 34px; border: 1px solid rgba(233,233,233,.5); padding: 0}
@@ -208,18 +212,65 @@ nav ul{width:720px; position: relative;z-index: 999999;}
 .movieChart_list .listWrap .slideBox .movie_info_wrap span{font-size: 12px;}
 .movieChart_list .listWrap .slideBox .movie_info_wrap span img{width:16px; height: 16px; position: relative; top: 3px }
 
-.button{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: red;
+
+
+
+#movieChartBeScreen_wrap .container .prev{
+    position: absolute; 
+    background: white url(../img/arrowL.png) no-repeat 50% 50%; 
+    background-size: 8px 13px;
+    opacity: .8;
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+    border-radius: 100%;
+    top:35%;
+    left:-20px;
+}
+#movieChartBeScreen_wrap .container .next{
+    position: absolute; 
+    background: white url(../img/arrowR.png) no-repeat 50% 50%;
+    background-size: 8px 13px;    
+    opacity: .8;
+    width: 40px;
+    height: 40px;
+    z-index: 100;
     border-radius: 50%;
+    top:35%;
+    right:-19px;
+
+
+    
 }
-.next{
-    top:30%;
-    right:10%;
+
+.video_wrap{
+    position: relative; /*::before의 부모*/
+   text-align: center;
+   background-color: #000;
 }
-.prev{
-    top:30%;
-    left:10%;
-}
+.video_wrap::before{
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background:
+    linear-gradient(to right, 
+    rgba(0, 0, 0, 1) 3%,
+    rgba(0, 0, 0, 1) 6%, 
+    rgba(0, 0, 0, 0.6) 9%, 
+    rgba(0, 0, 0, 0.3) 11%, 
+    rgba(0, 0, 0, 0) 15%, 
+    rgba(0, 0, 0, 0) 85%, 
+    rgba(0, 0, 0, 0.3) 89%, 
+    rgba(0, 0, 0, 0.6) 91%, 
+    rgba(0, 0, 0, 1) 93%, 
+    rgba(0, 0, 0, 1) 97%);
+    z-index: 2;
+ }
+ .video_wrap video{
+    width: 1000px;
+    height: 500px;
+ }
