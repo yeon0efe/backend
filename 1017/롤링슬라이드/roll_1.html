@@ -19,7 +19,6 @@ h1{text-align: center;}
 }
 
 #frame{
-    overflow:hidden;
     width: 232px;
     height: 54px;
     position: relative;
@@ -37,7 +36,7 @@ h1{text-align: center;}
 }
 
 
-p {text-align: center;}
+
 
 </style>
 
@@ -111,12 +110,12 @@ p {text-align: center;}
             list.style.marginLeft = -li_width * num +"px";
         },50);
         
-    });   
-    
-    
+    });    
 
-    function autoplay(){
-        if(num==5){
+
+
+function autoplay(){
+      if(num==5){
             num = 0;
             list.style.transition = 'none';
             list.style.marginLeft = 0;
@@ -127,8 +126,9 @@ p {text-align: center;}
             list.style.transition = 'margin-left 0.5s';
             list.style.marginLeft = -li_width * num +"px";
         },50);
-    };
-    setInterval(autoplay,2000);
+}
+setInterval(autoplay, 3000);
+
 
     </script>
 </body>

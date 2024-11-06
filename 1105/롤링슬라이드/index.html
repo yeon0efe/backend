@@ -76,15 +76,15 @@
     </div> 
 
     <script>
-    var list = document.getElementById('banner');
-    var listLi = document.querySelectorAll('#banner li');
+    var list = document.getElementById('banner');  // ul 
+    var listLi = document.querySelectorAll('#banner li'); //모든 li 가져옴
     var show_num = 3; //보이는 사진의 갯수
     var total = listLi.length; //총사진의 갯수
     //alert(total);
     var li_width = document.querySelector('#banner li').offsetWidth;
     //li 한개의 넓이 80
     //alert(li_width);
-    for(var i = 0; i < 3; i++){
+    for(var i = 0; i < 3; i++){  //이미지를 복사해서 붙이기 위한 for문
         var copyobj = listLi[i].cloneNode(true);
         //true 는  li 와 자식인 a 와 img 를 포함에서 복사한다.
         list.append(copyobj); //ul 맨뒤에 추가한다.

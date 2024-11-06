@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        ul { list-style: none; }
+        header {
+            width: 1200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+        #img_slide {
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #img_slide ul {
+            width: 9999px; /* 매우 큰 값을 지정하여 수평으로 슬라이드 이동 */
+            height: 300px;
+            display: flex; /* 요소를 수평으로 정렬 */
+        }
+        #img_slide ul li {
+            width: 1200px;
+            flex-shrink: 0;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 45%;
+            cursor: pointer;
+        }
+        .prev { left: 15px; }
+        .next { right: 15px; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header></header>
+    <div id="img_slide">
+        <ul id="banner">
+            <li><a href="#"><img src="images/slide1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slide2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slide3.jpg" alt=""></a></li>
+        </ul>
+        <div class="btn">
+            <span class="prev"><img src="images/prev_btn.png" alt="이전 버튼"></span>
+            <span class="next"><img src="images/next_btn.png" alt="다음 버튼"></span>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            var $banner = $('#banner');
+            var $slides = $banner.children('li');
+            var slideCount = $slides.length;
+            var currentIndex = 0;
+            var slideWidth = $slides.width();
+
+            // 첫 번째 슬라이드를 복제해서 마지막에 추가
+            var $firstClone = $slides.first().clone();
+            $banner.append($firstClone);
+
+            // 다음 버튼 클릭 이벤트
+            $('.next').on('click', function() {
+                if (currentIndex < slideCount) {
+                    currentIndex++;
+                    $banner.animate({ 'margin-left': -slideWidth * currentIndex }, 500);
+                } else {
+                    currentIndex = 0;
+                    $banner.css('margin-left', 0);
+                }
+            });
+
+            // 이전 버튼 클릭 이벤트
+            $('.prev').on('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    $banner.animate({ 'margin-left': -slideWidth * currentIndex }, 500);
+                } else {
+                    currentIndex = slideCount - 1;
+                    $banner.css('margin-left', -slideWidth * slideCount);
+                    $banner.animate({ 'margin-left': -slideWidth * currentIndex }, 500);
+                }
+            });
+
+            // 자동 슬라이드
+            function autoplay() {
+                $('.next').click();
+            }
+            setInterval(autoplay, 3000);
+        });
+    </script>
+</body>
+</html>

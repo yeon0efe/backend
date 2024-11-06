@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="tabWrap">
+        <ul class="tab_menu">
+            <li><a href="#tabs1" class="active">menu 1</a></li>
+            <li><a href="#tabs2">menu 2</a></li>
+            <li><a href="#tabs3">menu 3</a></li>
+        </ul>
+        <div id="tabContent">
+            <div id="tabs1">
+                <h2>menu1</h2>
+                <p>01.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, eius eum iste est placeat qui deleniti sed doloribus, eaque necessitatibus molestias nihil accusantium dolores aut vitae! Doloremque consectetur eius modi!</p>
+            </div>
+            <div id="tabs2">
+                <h2>menu2</h2>
+                <p>02.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, eius eum iste est placeat qui deleniti sed doloribus, eaque necessitatibus molestias nihil accusantium dolores aut vitae! Doloremque consectetur eius modi!</p>
+            </div>
+            <div id="tabs3">
+                <h2>menu3</h2>
+                <p>03.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, eius eum iste est placeat qui deleniti sed doloribus, eaque necessitatibus molestias nihil accusantium dolores aut vitae! Doloremque consectetur eius modi!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+const targetLink = document.querySelectorAll('.tab_menu a');
+const tabContent=document.querySelectorAll('#tabContent>div');
+
+for(let i=0; i<targetLink.length;i++){
+    targetLink[i].addEventListener('click',function(e){
+        e.preventDefault(); //return false와 유사
+        const orgTarget = e.target.getAttribute('href');
+        //클릭한 것(e.target)
+        //getAttribute 은 href, src 의 내용(value)을 읽어옴
+        //#tabs1, #tabs2, #tabs3
+        // alert(orgTarget);
+        const tabTarget=orgTarget.replace("#","");
+        //#tabs1 에서 #을 null값으로 바꾼다.-> tab1, tab2
+        //console.log(tabTarget)
+        for(let j=0; j<tabContent.length; j++){
+            tabContent[j].style.display="none"
+        }//tabContent를 모두 안보이게
+        document.getElementById(tabTarget).style.display='block';
+        //document.getElementById(tabs2).style.display='block';
+
+        for(let k=0; k<targetLink.length; k++){
+            targetLink[k].classList.remove('active');
+            e.target.classList.add('active');//클릭한 놈에 active를 
+            //넣는다. -tab_menu a -> active클래를 주어 색상변경 
+        }
+    }); 
+
+
+}
+    </script>
+</body>
+</html>

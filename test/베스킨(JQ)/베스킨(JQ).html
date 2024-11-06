@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        * {margin: 0; padding: 0;}
+        
+        .container{
+            width: 395px;
+            height: 160px;
+            margin:0 auto;
+            
+        }
+        dl{
+            width: 395px;
+            height: 160px;
+            margin: 0 auto;
+        }
+        dt{
+            width: 25px;
+            height: 160px;
+            float:left;
+            cursor: pointer;
+        } 
+        dd{
+            float:left;
+            
+            width: 395px;
+            height: 160px;
+            /*transition: width 0.5s;*/
+        }
+        dt span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-indent: -9999px; 
+        }
+       
+
+        dd img{
+            display: block;
+            width: 100%;
+            height: 160px;
+            /*text-indent: 1em;*/
+        }
+        dd{
+            width: 320px;
+        }
+        /*dt기본:blue*/
+        dt#page1 span{
+            background: url(./blue01.png) no-repeat 0 0;
+        }
+        dt#page2 span{
+            background: url(blue01.png) no-repeat 0 0;
+        }
+        dt#page3 span{
+            background: url(blue01.png) no-repeat 0 0;
+        }
+
+        /*dt클릭:orange*/
+        dt#page1 span.select{
+            background: url(orange01.png) no-repeat 0 0;
+        }
+        dt#page2 span.select{
+            background: url(orange01.png) no-repeat 0 0;
+        }
+        dt#page3 span.select{
+            background: url(orange01.png) no-repeat 0 0;
+        }
+        /*dt호버:pink*/
+        dt#page1 span.hover{
+            background: url(pink01.png) no-repeat 0 0;
+        }
+        dt#page2 span.hover{
+            background: url(pink01.png) no-repeat 0 0;
+        }
+        dt#page3 span.hover{
+            background: url(pink01.png) no-repeat 0 0;
+        }
+    
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <dl>
+            <dt id="page1"><span>Step.1</span></dt>
+            <dd><img src="./menuimg01.jpg" alt=""></dd>
+
+            <dt id="page2"><span>Step.2</span></dt>
+            <dd><img src="./menuimg02.jpg" alt=""></dd>
+
+            <dt id="page3"><span>Step.</span></dt>
+            <dd><img src="./menuimg03.jpg" alt=""></dd>
+        </dl>
+    </div>
+    <script>
+/*
+$(function(){
+        //첫 번째 dd빼고 다 넓이 0 
+        $('dd:not(:first)').css('width', '0px');
+        $('dt span:first').addClass('select');
+
+        $('dl dt').click(function(){
+            //만약 누른거 넓이가 0이면 
+            if($(this).next('dd').css('width') == '0px'){
+                //싹다 0으로만들고
+                $('dd').css('width','0px');
+                //누른거만 넓이 320으로 
+                $(this).next('dd').css('width','320px');
+                $('dt').removeClass('select');
+                $(this).addClass('select');
+            }
+        });
+        $('dl dt').hover(function(){
+                $(this).find('span').addClass('hover');
+            },function(){
+                $(this).find('span').removeClass('hover');
+            });
+    });
+    */
+
+$(function () {
+            //$('dd').hide();
+            //$('dd:first').show();
+            // 이렇게 숨기고 나서 너비 넓혀서 나타나게하려면 안됨...
+
+            $('dd').css('width','0px');
+            $('dd:first').css('width','320px');
+            $('dt:first span').addClass('select');
+
+            $('dl dt').click(function(){
+                if($(this).next('dd').css('width') == '0px'){
+                    $('dd').css('width','0px');
+                    $(this).next('dd').css('width','320px');
+                      
+                    $('dt span').removeClass('select'); 
+                    $(this).find('span').addClass('select');
+                }else{
+                    $('dd').css('width','0px');
+                }
+            });
+
+            $('dl dt').hover(function(){
+                $(this).find('span').addClass('hover');
+            },function(){
+                $(this).find('span').removeClass('hover');
+            });
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

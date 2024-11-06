@@ -1,0 +1,57 @@
+제이쿼리 파일 별도로 만들더라도 제이쿼리 src 넣어줘야 한다.
+제이쿼리 파일에서 $(function(){}) 사용은 하지 않아도 된다.
+
+ .offset***
+- 함수 X 속성 O 
+- 요소의 css값을 가져온다.
+
+offsetTop: 요소의 상단 위치.
+offsetLeft: 요소의 왼쪽 위치.
+offsetWidth: 요소의 전체 너비 (패딩, 테두리 포함).
+offsetHeight: 요소의 전체 높이 (패딩, 테두리 포함).
+offsetParent: 요소의 위치 계산 기준이 되는 부모 요소.
+이 속성들은 요소의 렌더링된 크기와 위치를 알 수 있게 해주며, 
+스크롤 위치나 레이아웃 조정 등에 유용하게 활용될 수 있습니다.
+
+offset 속성과 getComputedStyle은 모두 요소의 크기와 위치에 관련된 정보를 가져오지만, 
+각각의 사용 목적과 반환 값에는 중요한 차이가 있습니다.
+ - offset은 위치와 크기에 대한 정보만 반환
+ - 스타일 속성, 특히 상속된 속성을 확인하려면 getComputedStyle을 사용한다.
+-  getComputedStyle은 실제로 적용된 최종 계산된 스타일을 가져오기 때문이다.
+ - getComputedStyle은 제이쿼리에서도 사용할 수 있지만 제이쿼리는 css()메서드로 간단하게 사용한다.
+
+
+
+.scrollTop .scrollLeft 현재 요소의 스크롤 위치를 가져온다.
+이것도 속성이지 함수는 아니다.
+
+jQuery에서는 **removeClass()**를 사용하고, JavaScript에서는 **classList.remove()**
+jQuery에서는 **addClass()**를 사용하고, JavaScript에서는 **classList.add()**
+
+.getAttribute( )
+.replace("#" ,"")
+
+
+제이쿼리 탭매뉴 만들때 index( )와 eq( )를 유기적으로 사용할것!
+var i = $(this).index( ) //현재 요소의 index값을 담아줄 변수 선언.
+$(elements).eq(i).show() // index값을 eq에 넣어 특정 요소만 불러주기~
+
+제이쿼리 애니메이트
+https://api.jquery.com/animate/
+$().animate({},3000) 이렇게 사용한다. 3000= 3초
+
+Math.floor(변수) 소수점 이하 버린다.
+Math.ceil(변수) 소수점 이하 올린다. 
+Math.round(변수) 소수점 이하 반올림
+
+
+JavaScript에서는 .offsetTop을 사용하고,
+jQuery에서는 .offset().top을 사용합니다.
+offset() 메서드는 jQuery에서만 제공되며, **offsetTop**은 JavaScript에서 사용됩니다.
+
+JS는 forEach 제이쿼리는 each? 
+**forEach**는 배열에만 사용 가능합니다.
+**each**는 jQuery 객체 (즉, DOM 요소들을 감싼 jQuery 객체)에 대해 반복할 때 사용됩니다.
+
+
+
