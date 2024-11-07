@@ -119,20 +119,66 @@
 
         <script>
             $(function(){
-                var num = 0;
-                var i;
-                var margin_w = 300;
-                var copy1 = $('.slide_list li').eq(0).clone();
-                $('.slide_list li').eq(3).append(copy1);
-
+                var copy_img = $('.slide_list li').eq(0).clone();
+                $('.slide_list li').eq(3).append(copy_img);
+                var i = 0;
+                
                 $('.pager ul li').click(function(){
-                    i = $(this).index();
-                    alert(i);
-                    $(".slide_list").stop().animate({"margin-left":margin_w *-i})
-            
-                });
+                      i = $(this).index();
+                      $('.slide_list').stop().animate({'margin-left':-300*i},600)
+                    $('.pager ul li').removeClass('on');
+                    $(this).addClass('on');
+                })
+                  
+                $('.next').click(function(){
+                    i++;
+                    if(i==4){
+                        $('.slide_list').stop().animate({'margin-left':-300*i},600,function(){
+                            $('.slide_list').css('margin-left',0);
+                        })
+                        i=0;
+                        }else{
+                            $('.slide_list').stop().animate({'margin-left':-300*i},600)
+                        }
+                    //if문-슬라이드 끝남 > pager 챙겨주기
+                    $('.pager ul li').removeClass('on');
+                    $('.pager ul li').eq(i).addClass('on');
 
-            })
+                })
+
+
+                $('.prev').click(function(){
+                    if(i==0){
+                        i=4;
+                        $('.slide_list').css('margin-left',-300*i);
+                    }
+                    i--;
+                    $('.slide_list').stop().animate({'margin-left':-300*i},300)
+                       // pager 챙겨주기
+                    $('.pager ul li').removeClass('on');
+                    $('.pager ul li').eq(i).addClass('on');
+                })
+
+                //자동슬라이드 (함수 선언 후 setInterval로 호출)
+
+                function timer(){
+                    i++;
+                    if(i==4){
+                        $('.slide_list').stop().animate({'margin-left':-300*i},600,function(){
+                            $('.slide_list').css('margin-left',0);
+                        })
+                        i=0;
+                        }else{
+                            $('.slide_list').stop().animate({'margin-left':-300*i},600)
+                        }
+                    //if문-슬라이드 끝남 > pager 챙겨주기
+                    $('.pager ul li').removeClass('on');
+                    $('.pager ul li').eq(i).addClass('on');
+                }
+
+
+                setInterval(timer,3000);
+                })
         </script>
 </body>
 </html>
