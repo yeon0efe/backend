@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>마커에 인포윈도우</title>
+</head>
+<body>
+<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=bceccd594bb478b5533d7d2ec63f8bb0"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.291655, 127.012582), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+// 마커와 인포윈도우 데이터를 배열로 저장
+var positions = [
+    {
+        title: "연세IT미래교육원", 
+        latlng: new kakao.maps.LatLng(37.291655, 127.012582),
+        content: '<div style="padding:5px;">연세IT미래교육원 <br><a href="https://map.kakao.com/link/map/연세IT미래교육원,37.291655,127.012582" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/연세IT미래교육원,37.291655,127.012582" style="color:blue" target="_blank">길찾기</a></div>'
+    },
+    {
+        title: "컴포즈 거북시장점", 
+        latlng: new kakao.maps.LatLng(37.290842, 127.012966),
+        content: '<div style="padding:5px;">컴포즈 거북시장점 <br><a href="https://map.kakao.com/link/map/컴포즈 거북시장점,37.290842,127.012966" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/컴포즈 거북시장점,37.290842,127.012966" style="color:blue" target="_blank">길찾기</a></div>'
+    },
+    {
+        title: "빽다방 수원북문점", 
+        latlng: new kakao.maps.LatLng(37.291074, 127.012655),
+        content: '<div style="padding:5px;">빽다방 수원북문점 <br><a href="https://map.kakao.com/link/map/빽다방 수원북문점,37.291074,127.012655" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/빽다방 수원북문점,37.291074,127.012655" style="color:blue" target="_blank">길찾기</a></div>'
+    }
+];
+
+var currentInfowindow = null; // 현재 열려 있는 인포윈도우를 추적
+
+// 마커와 인포윈도우 생성
+positions.forEach(function(position) {
+    // 마커 생성
+    var marker = new kakao.maps.Marker({
+        map: map, 
+        position: position.latlng,
+        title: position.title
+    });
+
+    // 인포윈도우를 생성
+    var infowindow = new kakao.maps.InfoWindow({
+        content: position.content 
+    });
+
+    // 마커에 마우스오버 이벤트를 등록하여 인포윈도우를 표시
+    kakao.maps.event.addListener(marker, 'mouseover', function() {
+        // 기존에 열려 있는 인포윈도우가 있으면 닫기
+        if (currentInfowindow) {
+            currentInfowindow.close();
+        }
+        
+        // 새로운 인포윈도우 열기
+        infowindow.open(map, marker);
+        currentInfowindow = infowindow; // 현재 열려 있는 인포윈도우를 추적
+    });
+
+    // 마커에 마우스아웃 이벤트를 등록하여 인포윈도우를 닫는다
+    kakao.maps.event.addListener(marker, 'mouseout', function() {
+        // 마우스가 나가면 인포윈도우를 닫는다
+        setTimeout(function() {
+            if (currentInfowindow === infowindow) {
+                infowindow.close();
+                currentInfowindow = null; // 현재 열려 있는 인포윈도우 초기화
+            }
+        }, 200);
+    });
+});
+</script>
+</body>
+</html>

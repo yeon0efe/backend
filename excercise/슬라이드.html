@@ -43,7 +43,7 @@
             height: 300px;
         }
 
-        button p{
+        .button{
             font-weight: bold;
             font-size: 40px;
             cursor: pointer;
@@ -102,10 +102,10 @@
                 </ul>
             </div>
         
-            <button>
+            <div class="button">
                 <p class="next">&gt</p>
                 <p class="prev">&lt</p>
-            </button>
+            </div>
 
             <div class="pager">
                 <ul>
@@ -127,10 +127,30 @@
 
                 $('.pager ul li').click(function(){
                     i = $(this).index();
-                    alert(i);
-                    $(".slide_list").stop().animate({"margin-left":margin_w *-i})
-            
+                    $(".slide_list").stop().animate({"margin-left":-margin_w *i})
+
+                    $('.pager ul li').removeClass('on'); 
+                    $(this).addClass('on');
                 });
+
+                $('.next').click(function(){
+                    if(num==4){
+                        num=0;
+                        $('.pager ul li').removeClass('on'); 
+                         $('.pager ul li').eq(num).addClass('on')
+                    }else{
+                        num++;
+                        $(".slide_list").stop().animate({"margin-left":-margin_w *num})
+                        $('.pager ul li').removeClass('on'); 
+                        $('.pager ul li').eq(i).addClass('on')
+                    }
+                })
+
+                $('.prev').click(function(){
+                    if(num==0){num=4;}
+                    num--;
+                    $(".slide_list").stop().animate({"margin-left":-margin_w *num})
+                })
 
             })
         </script>
