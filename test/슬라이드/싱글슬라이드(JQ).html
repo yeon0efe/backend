@@ -80,10 +80,10 @@
             $('.prev').on('click', function() {
                 if (currentIndex > 0) {
                     currentIndex--;
-                    $banner.animate({ 'margin-left': -slideWidth * currentIndex }, 500);
+                    $('#banner').animate({ 'margin-left': -slideWidth * currentIndex }, 500);
                 } else {
                     currentIndex = slideCount - 1;
-                    $banner.css('margin-left', -slideWidth * slideCount);
+                    $('#banner').css('margin-left', -slideWidth * slideCount);
                     $banner.animate({ 'margin-left': -slideWidth * currentIndex }, 500);
                 }
             });

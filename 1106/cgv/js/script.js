@@ -20,7 +20,6 @@ $('.next').click(function(){
 //         $('.listWrap').stop().animate({'margin-left':1010*num},500) 
 //     }
 // })
-
 // prev는 양수, next는 음수주는거 아님....ㅠ 마진은 num값으로 조절함.
 
 $('.prev').click(function(){
