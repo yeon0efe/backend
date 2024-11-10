@@ -1,3 +1,17 @@
+
+    var swiper = new Swiper('.mySwiper',{
+       slidesPerView: 3,
+       spaceBetween : 30,
+       navigation:{
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
+       },
+       autoplay:true,
+      
+    });
+
+
+
 var num = 0;
 $('.prev').hide();
 
@@ -42,3 +56,14 @@ $('.closeBtn').click(function(){
     $('.nav .navBg').css('top',164);
     
 })
+
+
+ 
+$('.specialHall_list li').mouseenter(function(){
+    var i =  $(this).index();
+    //alert(i);
+    $('.specialHall_list li').removeClass('on');
+    $('.specialHall_list li').eq(i).addClass('on');
+    $('.tapContent a').removeClass('on');
+    $('.tapContent a').eq(i).addClass('on');
+  });
