@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+ // 객체를 프로퍼티로 품을 수 있음
+ const sam = {
+    name : "Sam",
+    info :  {
+        age: "20",
+        class : "Javascript",
+    },
+ };
+
+//  여러방식으로 호출 가능하다.
+
+ document.write(sam.name,"<br/>");
+ document.write(sam.info.age,"<br/>") /*가장 많이 사용하는 방법*/
+ document.write(sam.info["age","<br/>"]);
+ document.write(sam["info"].age,"<br/>")
+ document.write(sam["info"]["age"],"<br/>")
+
+ // 함수도 담을 수 있음
+ sam.etc = function(){
+    return "Bonk!";
+ }
+ //sam.etc(); // "Bonk!"
+ document.write(sam.etc(),"<br/>");
+ delete sam.info;
+
+</script>
+<body>
+    
+</body>
+</html>

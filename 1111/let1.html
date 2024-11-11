@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function example() {
+            console.log(b); // ReferenceError : 초기화 전이므로 접근 불가 (TDZ)
+            let b = 10;
+            // var b = 20; // 재선언 : 재선언은 불가함
+            b= 30; // 재할당 : 재할당은 가능
+          
+            console.log(b); // 30
+        }
+        example();
+    </script>
+</head>
+<body>
+   
+</body>
+</html>

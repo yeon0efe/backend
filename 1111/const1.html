@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function example() {
+            
+            const c = 10;
+            // const c = 20; 재선언 불가
+            // c=30; //재할당 불가능
+
+            /*!!!!const는 재할당 재선언 불가!!!!*/
+            /*!!!!!단, 배열요소는 수정 가능하다!!!!!!*/ 
+
+            
+            console.log(c); //30
+            const arr=[1,2,3]
+            arr.push(4) //가능 : 배열 요소는 수정 가능하다.
+            console.log(arr);  // [1,2,3,4]
+        }
+        example();
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
