@@ -2,7 +2,7 @@ package a1112;
 
 import java.util.Scanner;
 
-public class Scan8 {
+public class scan8 {
     public static void main(String[] args) {
         //일력 예시  
         //A
