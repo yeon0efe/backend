@@ -34,7 +34,7 @@ function ProductList(){
     ];
     return (
         <div>
-            <h1>사용자목록</h1>
+            <h1>제품목록</h1>
             {dummyProducts.map((product, index)=>(
             <ProductCard1 key={index} productName={product.productName} price={product.price} description={product.description} inStock={product.inStock}/>
         ))};

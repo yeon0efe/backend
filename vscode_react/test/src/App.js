@@ -1,10 +1,10 @@
 
 import './App.css';
-import UserList from './UserList';
+import InputSample1 from './InputSample1';
 function App(){
   
   return( 
-   <UserList/>
+   <InputSample1 />
   );
 
 }

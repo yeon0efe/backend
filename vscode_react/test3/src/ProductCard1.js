@@ -12,7 +12,7 @@ function ProductCard1({productName,price,description,inStock}){
             <h2>상품명 : {productName}</h2>
             <p>가격 : {price}</p>
             <p>설명 : {description}</p>
-            <p>재고 : {inStock ? "활성":"비활성"}</p>
+            <p>재고 : {inStock ? "여유":"품절"}</p>
         </div>
     );
 }
