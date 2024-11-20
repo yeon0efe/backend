@@ -1,0 +1,13 @@
+.black-nav{
+  display: flex;
+  background-color: rgb(20, 210, 90);
+  width: 100%;
+  color:white;
+  padding-left: 20px;
+}
+
+.list{
+  padding-left : 20px;
+  text-align: left;
+  border-bottom : 1px solid rgb(240,240,240);
+}
