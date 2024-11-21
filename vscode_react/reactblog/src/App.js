@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">                    
       <div className="black-nav">
-        <h4 style={{color:'white',fontSize:'14px'}}>blog</h4> 
+        <h4 style={{color:'white',fontSize:'18px'}}>blog</h4> 
   
       </div>
 
@@ -52,12 +52,18 @@ function App() {
       </div>
 
       <div className="list">
-        <h4>{포스팅[1]}&nbsp;&nbsp;<button onClick={()=>{a(['행궁동 카페','여행지 추천안함','빵지순례'])}}>버튼</button></h4>
         
+        {/* <h4>{포스팅[1]}&nbsp;&nbsp;<button onClick={()=>{a(['행궁동 카페','여행지 추천안함','빵지순례'])}}>버튼</button></h4> */}
         
-        {/* {()=>{a[1]='여행지 추천안함'}}으로 적는게 더 간결할 듯 싶다
-        두 방식 모두 원본데이터를 수정한다.
-        하지만 array/object 다룰 때는 되도록 원본은 보존하는 편이 좋다. */}
+        <h4>{포스팅[1]}&nbsp;&nbsp;<button onClick={() => {
+          const 새로운포스팅 = [...포스팅];
+          새로운포스팅[1] = '여행지 추천안함';
+          a(새로운포스팅);
+        }}
+        >버튼</button></h4>
+        
+
+      
 
           {/* 
           let copy = 포스팅;
