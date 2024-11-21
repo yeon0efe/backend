@@ -2,7 +2,7 @@ package a1112;
 
 import java.util.Scanner;
 
-public class scan5 {
+public class Scan5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
