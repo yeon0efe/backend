@@ -8,3 +8,4 @@ public class Wizard extends Hero {
         System.out.println("얼리기");
     }
 }
+//Wizard  -> freezing() 메서드를 가지고 있다.

@@ -9,3 +9,4 @@ public class Warrior extends Hero {
         System.out.println("대지가르기!");
     }
 }
+// Warrior 는 부모를 상속받고 groundCutting() 메서드를 가지고 있다.

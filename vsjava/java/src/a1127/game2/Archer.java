@@ -8,3 +8,4 @@ public class Archer extends Hero {
         System.out.println("불화살");
     }
 }
+// /Archer 불화살을 가지고 있음

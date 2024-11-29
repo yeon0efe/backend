@@ -2,7 +2,7 @@ package a1127.game2;
 
 public class Main {
     public static void main(String[] args) {
-        
+      
         Hero[] heros = new Hero[3]; //부모 객체를 배열로 선언
         heros[0] = new Warrior("전사"); //부모 객체 배열에 자식 객체를 업캐스팅
         heros[1] = new Archer("궁수");

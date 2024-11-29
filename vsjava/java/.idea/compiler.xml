@@ -11,6 +11,11 @@
       <file url="file://$PROJECT_DIR$/src/a1127/animal2/Bird.java" />
       <file url="file://$PROJECT_DIR$/src/a1127/animal2/Dog.java" />
       <file url="file://$PROJECT_DIR$/src/a1127/animal2/Fish.java" />
+      <file url="file://$PROJECT_DIR$/src/a1128/sort/Hak1/Main1.java" />
+      <file url="file://$PROJECT_DIR$/src/a1129/Hak4/Main1.java" />
+      <file url="file://$PROJECT_DIR$/src/a1129/Hak4/NameComparator.java" />
+      <file url="file://$PROJECT_DIR$/src/a1129/interface1/interface3.java" />
+      <file url="file://$PROJECT_DIR$/src/a1129/interface1/Interface4.java" />
     </excludeFromCompile>
   </component>
 </project>
