@@ -8,9 +8,15 @@ public class Q1121 {
         System.out.println("사각형의 면적: " + rect.getArea());
         System.out.println("사각형의 둘레: " + rect.getPerimeter());
 
+<<<<<<< HEAD
         // 정사각형 예제
         Rectangle square = new Rectangle();
         square.setDimensions(4); // 정사각형으로 설정
+=======
+        // 정사각형
+        Rectangle square = new Rectangle();
+        square.setDimensions(4);
+>>>>>>> 679df517dcff3bf053997b3de896229a4ad6bfb8
         System.out.println("정사각형 면적: " + square.getArea());
         System.out.println("정사각형 둘레: " + square.getPerimeter());
     }
@@ -33,17 +39,27 @@ class Rectangle {
     }
 
     // setDimensions 메서드 (오버로딩)
+<<<<<<< HEAD
 
     public void setDimensions(double side) {
         this.width = side;
         this.height = side;
     }
 
+=======
+>>>>>>> 679df517dcff3bf053997b3de896229a4ad6bfb8
     public void setDimensions(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
+<<<<<<< HEAD
+=======
+    public void setDimensions(double side) {
+        this.width = side;
+        this.height = side;
+    }
+>>>>>>> 679df517dcff3bf053997b3de896229a4ad6bfb8
 
     // getArea 메서드 (오버로딩)
     public double getArea() {
