@@ -3,6 +3,10 @@
   <component name="CompilerConfiguration">
     <excludeFromCompile>
       <file url="file://$PROJECT_DIR$/vsjava/java/src/a1125/object/Main1.java" />
+      <file url="file://$PROJECT_DIR$/vsjava/java/src/a1129/interface1/interface3.java" />
+      <file url="file://$PROJECT_DIR$/vsjava/java/src/a1129/Hak4/Main1.java" />
+      <file url="file://$PROJECT_DIR$/vsjava/java/src/a1129/interface1/Interface4.java" />
+      <file url="file://$PROJECT_DIR$/vsjava/java/src/a1128/sort/Hak1/Main1.java" />
     </excludeFromCompile>
   </component>
 </project>
