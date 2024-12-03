@@ -68,9 +68,17 @@ public class StudentDTO {
         this.math = math;
     }
 
+    // @Override
+    // public String toString() {
+    //     return "StudentDTO [id=" + id + ", name=" + name + ", age=" + age + ", kor=" + kor + ", eng=" + eng + ", math="
+    //             + math + "]";
+    // }
+
     @Override
     public String toString() {
-        return  " "+name + " \t " + age + " \t " + kor + " \t " + eng + " \t " + math ;
+        return  " "+name + " \t " + age + " \t " + kor + " \t " + eng + " \t " + math ;  
     }
+    
 
+    
 }

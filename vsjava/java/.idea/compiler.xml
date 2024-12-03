@@ -19,6 +19,9 @@
       <file url="file://$PROJECT_DIR$/src/숙제/Q1121.java" />
       <file url="file://$PROJECT_DIR$/src/a1201/hak5/StudentDAO.java" />
       <file url="file://$PROJECT_DIR$/src/a1201/hak5/MainClass.java" />
+      <file url="file://$PROJECT_DIR$/src/a1203/coffee1/CoffeeService.java" />
+      <file url="file://$PROJECT_DIR$/src/a1203/coffee1/CoffeeImpl.java" />
+      <file url="file://$PROJECT_DIR$/src/a1203/gen1/Gen1.java" />
     </excludeFromCompile>
   </component>
 </project>
