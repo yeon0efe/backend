@@ -22,6 +22,12 @@
       <file url="file://$PROJECT_DIR$/src/a1203/coffee1/CoffeeService.java" />
       <file url="file://$PROJECT_DIR$/src/a1203/coffee1/CoffeeImpl.java" />
       <file url="file://$PROJECT_DIR$/src/a1203/gen1/Gen1.java" />
+      <file url="file://$PROJECT_DIR$/src/a1205/Stream7.java" />
+      <file url="file://$PROJECT_DIR$/src/a1206/optional/Optional1.java" />
+      <file url="file://$PROJECT_DIR$/src/a1204/ramda/Function3.java" />
+      <file url="file://$PROJECT_DIR$/src/a1204/ramda/Function2.java" />
+      <file url="file://$PROJECT_DIR$/src/a1204/Map1.java" />
+      <file url="file://$PROJECT_DIR$/src/a1204/List2.java" />
     </excludeFromCompile>
   </component>
 </project>
