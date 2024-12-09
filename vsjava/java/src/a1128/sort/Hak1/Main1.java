@@ -2,7 +2,6 @@ package a1128.sort.Hak1;
 
 import java.util.Scanner;
 
-import a1120.class1.Student;
 
 public class Main1 {
     public static void main(String[] args) {

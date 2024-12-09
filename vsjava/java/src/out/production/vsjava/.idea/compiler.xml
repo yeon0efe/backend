@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/a1122/final1.java" />
+      <file url="file://$PROJECT_DIR$/a1126/sec03/Main1.java" />
+      <file url="file://$PROJECT_DIR$/a1129/Hak4/Main1.java" />
+      <file url="file://$PROJECT_DIR$/a1129/Hak4/NameComparator.java" />
+      <file url="file://$PROJECT_DIR$/a1129/interface1/interface3.java" />
+      <file url="file://$PROJECT_DIR$/a1129/interface1/Interface4.java" />
+      <file url="file://$PROJECT_DIR$/a1204/List2.java" />
+      <file url="file://$PROJECT_DIR$/a1204/Map1.java" />
+      <file url="file://$PROJECT_DIR$/a1204/ramda/Function2.java" />
+      <file url="file://$PROJECT_DIR$/a1204/ramda/Function3.java" />
+      <file url="file://$PROJECT_DIR$/a1126/sec03/Main.java" />
+      <file url="file://$PROJECT_DIR$/a1128/sort/Hak1/Main1.java" />
+      <file url="file://$PROJECT_DIR$/a1125/object/Main1.java" />
+      <file url="file://$PROJECT_DIR$/a1203/gen1/Gen1.java" />
+    </excludeFromCompile>
+  </component>
+</project>
